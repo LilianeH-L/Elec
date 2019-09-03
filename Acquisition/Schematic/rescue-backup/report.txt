@@ -1,0 +1,34 @@
+Info: Backing up file “C:\Users\Victor\Documents\Ecole\Projets\Metis\Metis-Exoskeleton\Acquisition\Schematic\sym-lib-table” to file “C:\Users\Victor\Documents\Ecole\Projets\Metis\Metis-Exoskeleton\Acquisition\Schematic\rescue-backup\sym-lib-table-2018-11-21-18-34-24”.
+Info: Backing up file “C:\Users\Victor\Documents\Ecole\Projets\Metis\Metis-Exoskeleton\Acquisition\Schematic\AmpFil3a.sch” to file “C:\Users\Victor\Documents\Ecole\Projets\Metis\Metis-Exoskeleton\Acquisition\Schematic\rescue-backup\AmpFil3a-2018-11-21-18-34-24.sch”.
+Info: Backing up file “C:\Users\Victor\Documents\Ecole\Projets\Metis\Metis-Exoskeleton\Acquisition\Schematic\AmpFil3a.pro” to file “C:\Users\Victor\Documents\Ecole\Projets\Metis\Metis-Exoskeleton\Acquisition\Schematic\rescue-backup\AmpFil3a-2018-11-21-18-34-24.pro”.
+Info: Backing up file “C:\Users\Victor\Documents\Ecole\Projets\Metis\Metis-Exoskeleton\Acquisition\Schematic\AmpFil3a-cache.lib” to file “C:\Users\Victor\Documents\Ecole\Projets\Metis\Metis-Exoskeleton\Acquisition\Schematic\rescue-backup\AmpFil3a-cache-2018-11-21-18-34-24.lib”.
+Info: Backing up file “C:\Users\Victor\Documents\Ecole\Projets\Metis\Metis-Exoskeleton\Acquisition\Schematic\AmpFil3a-rescue.lib” to file “C:\Users\Victor\Documents\Ecole\Projets\Metis\Metis-Exoskeleton\Acquisition\Schematic\rescue-backup\AmpFil3a-rescue-2018-11-21-18-34-24.lib”.
+Info: Backing up file “C:\Users\Victor\Documents\Ecole\Projets\Metis\Metis-Exoskeleton\Acquisition\Schematic\AmpFil3a-rescue.dcm” to file “C:\Users\Victor\Documents\Ecole\Projets\Metis\Metis-Exoskeleton\Acquisition\Schematic\rescue-backup\AmpFil3a-rescue-2018-11-21-18-34-24.dcm”.
+Info: Adding library “AmpFil3a-rescue”, file “${KIPRJMOD}/AmpFil3a-rescue.lib” to project symbol library table.
+Symbol “LM324” mapped to symbol library “AmpFil3a-rescue”.
+Symbol “R” mapped to symbol library “AmpFil3a-rescue”.
+Symbol “R” mapped to symbol library “AmpFil3a-rescue”.
+Symbol “R” mapped to symbol library “AmpFil3a-rescue”.
+Symbol “R” mapped to symbol library “AmpFil3a-rescue”.
+Symbol “GNDREF” mapped to symbol library “AmpFil3a-rescue”.
+Symbol “GNDREF” mapped to symbol library “AmpFil3a-rescue”.
+Symbol “C” mapped to symbol library “AmpFil3a-rescue”.
+Symbol “INA128” mapped to symbol library “AmpFil3a-rescue”.
+Symbol “R” mapped to symbol library “AmpFil3a-rescue”.
+Symbol “LM324” mapped to symbol library “AmpFil3a-rescue”.
+Symbol “C” mapped to symbol library “AmpFil3a-rescue”.
+Symbol “R” mapped to symbol library “AmpFil3a-rescue”.
+Symbol “R” mapped to symbol library “AmpFil3a-rescue”.
+Symbol “GNDREF” mapped to symbol library “AmpFil3a-rescue”.
+Symbol “R” mapped to symbol library “AmpFil3a-rescue”.
+Symbol “LM324” mapped to symbol library “AmpFil3a-rescue”.
+Symbol “C” mapped to symbol library “AmpFil3a-rescue”.
+Symbol “GNDREF” mapped to symbol library “AmpFil3a-rescue”.
+Symbol “R” mapped to symbol library “AmpFil3a-rescue”.
+Symbol “GNDREF” mapped to symbol library “AmpFil3a-rescue”.
+Symbol “Audio-Jack-3” mapped to symbol library “AmpFil3a-rescue”.
+Symbol “Conn_01x03” mapped to symbol library “AmpFil3a-rescue”.
+Symbol “R” mapped to symbol library “AmpFil3a-rescue”.
+Symbol “R” mapped to symbol library “AmpFil3a-rescue”.
+Symbol “R” mapped to symbol library “AmpFil3a-rescue”.
+Info: Symbol library table mapping complete!
