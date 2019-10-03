@@ -103,19 +103,9 @@ bool state = false;
 
 #pragma endregion //}
 
-inline void toggleStateWire(int){
-	int data = Wire.read();
-	if (data)
-		state = true;
-	else
-		state = false;
-}
-
 int comPin = 18;
 long upGoal = 500;
 long downGoal = 1;
-
-
 
 void setup() {
 	//Serial.begin(9600);
@@ -125,10 +115,8 @@ void setup() {
 	motorSetup();
 
 	//timer.begin(toggleGoal, 5000000);
-	//Wire.begin(155);
-	//Wire.onReceive(toggleStateWire);
-	pinMode(comPin, INPUT);
-	//attachInterrupt(comPin, toggleState, CHANGE);
+	pinMode(comPin, INPUT_PULLUP);
+	// attachInterrupt(comPin, toggleState, CHANGE);
 }
 
 inline void toggleState(){
@@ -143,10 +131,12 @@ int speed = 400;
 
 inline void timeControl(){
 	if(state!=prevState){
+		Serial.print("State changed to : ");
+		Serial.println(state);
 		prevState=state;
 		count = 0;
 		while(count <= turnTime){
-			Serial.println(count);
+			// Serial.println(count);
 			digitalWrite(enablePin,HIGH);
 			digitalWrite(brakePin, LOW);
 			analogWrite(motorPin, speed);
@@ -169,12 +159,18 @@ void loop() {
 	//readRegisters();
 	// setDirection(true);
 	// analogWrite(motorPin, 2048);
-	state = digitalRead(comPin);
+	// state = digitalRead(comPin);
 	//Serial.println(readAngle(false));
 	// Serial.print('\t');
 	// Serial.println(state);
-	timeControl();
+	// timeControl();
 	
+
+	//To control with EMG
+	state = digitalRead(comPin);
+	Serial.println(state); 
+	timeControl();
+
 	// if (state)
 	// {
 	// binaryControl(upGoal);
@@ -183,8 +179,6 @@ void loop() {
 	// {
 	// binaryControl(downGoal);
 	// }
-
-
 }
 
 #pragma region "Setup and SPI" //{
