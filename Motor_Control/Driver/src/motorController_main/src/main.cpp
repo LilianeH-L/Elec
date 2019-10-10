@@ -158,18 +158,18 @@ inline void timeControl(){
 void loop() {
 	//readRegisters();
 	// setDirection(true);
-	// analogWrite(motorPin, 2048);
+	analogWrite(motorPin, 2000);
 	// state = digitalRead(comPin);
-	//Serial.println(readAngle(false));
-	// Serial.print('\t');
+	Serial.println(readAngle(false));
+	Serial.print('\t');
 	// Serial.println(state);
 	// timeControl();
 	
 
-	//To control with EMG
-	state = digitalRead(comPin);
-	Serial.println(state); 
-	timeControl();
+	// //To control with EMG
+	// state = digitalRead(comPin);
+	// Serial.println(state); 
+	// timeControl();
 
 	// if (state)
 	// {
