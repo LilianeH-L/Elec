@@ -68,13 +68,15 @@ void setup() {
   Serial.begin(9600);
   Serial.println("Starting");
   SPISetup();
-	motorSetup();
+  motorSetup();
 }
 
 void loop() {
-  analogWrite(motorPin, 2000);
-  Serial.println(readAngle(false));
-	Serial.print('\t');
+	analogWrite(motorPin, 1000);
+//   Serial.println(encoder.read());
+	// delay(1000);
+	// digitalWrite(3, LOW);
+	// Serial.println(readRegister(0x2A), BIN);
 }
 
 #pragma region "Setup and SPI" //{

@@ -158,10 +158,9 @@ inline void timeControl(){
 void loop() {
 	//readRegisters();
 	// setDirection(true);
-	analogWrite(motorPin, 2000);
+	analogWrite(motorPin, 1000);
 	// state = digitalRead(comPin);
 	Serial.println(readAngle(false));
-	Serial.print('\t');
 	// Serial.println(state);
 	// timeControl();
 	
