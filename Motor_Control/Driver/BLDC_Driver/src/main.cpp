@@ -73,10 +73,11 @@ void setup() {
 
 void loop() {
 	analogWrite(motorPin, 1000);
-//   Serial.println(encoder.read());
+	Serial.print(encoder.read());
+	Serial.print("\t");
 	// delay(1000);
 	// digitalWrite(3, LOW);
-	// Serial.println(readRegister(0x2A), BIN);
+	Serial.println(readRegister(0x2A), BIN);
 }
 
 #pragma region "Setup and SPI" //{
