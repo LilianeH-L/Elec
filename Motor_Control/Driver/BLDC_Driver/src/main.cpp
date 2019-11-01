@@ -53,6 +53,7 @@ const int encoderPin1 = 0, encoderPin2 = 1;
 const double gearReduction = 1; //100 with gearbox, 1 without
 const double encoderResolution = 4;
 const double countsPerTurn = 800;
+double countToAngleFactor = 360 / (countsPerTurn*gearReduction*encoderResolution);
 
 //Controle du moteur
 Encoder encoder(encoderPin2, encoderPin1);
@@ -72,12 +73,38 @@ void setup() {
 }
 
 void loop() {
-	analogWrite(motorPin, 1000);
-	Serial.print(encoder.read());
-	Serial.print("\t");
-	// delay(1000);
-	// digitalWrite(3, LOW);
-	Serial.println(readRegister(0x2A), BIN);
+	digitalWrite(directionPin, HIGH);
+	digitalWrite(enablePin, HIGH);
+	digitalWrite(brakePin, LOW);
+	analogWrite(motorPin, 2047);
+	// unsigned long currentMillis = millis();
+	// unsigned long targetMillis = currentMillis+2000;
+
+	// Serial.println(encoder.read());
+	// while (currentMillis < targetMillis);
+	// {
+	// Serial.println(encoder.read()*countToAngleFactor);
+		
+	// }
+	
+	// //delay(2000);
+
+	// digitalWrite(enablePin, LOW);
+	// digitalWrite(brakePin, HIGH);
+	// delay(100);
+
+	// digitalWrite(directionPin, LOW);
+	// digitalWrite(enablePin, HIGH); 
+	// digitalWrite(brakePin, LOW);
+	// analogWrite(motorPin, 500);
+	// Serial.println(encoder.read());
+
+	// delay(2000);
+
+	// digitalWrite(enablePin, LOW);
+	// digitalWrite(brakePin, HIGH);
+	// delay(100);
+
 }
 
 #pragma region "Setup and SPI" //{
@@ -216,8 +243,6 @@ void motorSetup() {
 #pragma region "Encoder" //{
 
 //TESTER : Pour old controller, Fonction qui retourne l'angle du moteur, If fullTurn = true, will convert the angle to a circle (0-360), false for no correction
-double countToAngleFactor = 360 / (countsPerTurn*gearReduction*encoderResolution);
-
 inline double readAngle(bool fullTurn=false) {
 	double angle =  encoder.read()*countToAngleFactor ; //To get degrees
 	return angle;
