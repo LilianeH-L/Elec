@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:PCB_v2-cache
-EELAYER 26 0
+EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -329,7 +329,7 @@ Wire Wire Line
 Text Label 6000 2200 2    50   ~ 0
 Vreg
 $Comp
-L MyLibrary:Molex_39-28-1083 J1
+L PCB_v2-rescue:Molex_39-28-1083-MyLibrary J1
 U 1 1 5BE0BE2F
 P 1750 3050
 F 0 "J1" H 2150 3315 50  0000 C CNN
@@ -804,45 +804,10 @@ Text Label 1050 1200 2    50   ~ 0
 Vm
 Wire Wire Line
 	1050 1200 1200 1200
-$Comp
-L Device:R R9
-U 1 1 5C81C7E8
-P 8500 3050
-F 0 "R9" V 8293 3050 50  0000 C CNN
-F 1 "4.7k" V 8384 3050 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 8430 3050 50  0001 C CNN
-F 3 "~" H 8500 3050 50  0001 C CNN
-	1    8500 3050
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	8650 3050 9050 3050
-Text Label 8500 3850 0    50   ~ 0
-3.3V
-$Comp
-L Device:R R10
-U 1 1 5C852459
-P 8500 3450
-F 0 "R10" V 8293 3450 50  0000 C CNN
-F 1 "4.7k" V 8384 3450 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 8430 3450 50  0001 C CNN
-F 3 "~" H 8500 3450 50  0001 C CNN
-	1    8500 3450
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	8650 3450 9050 3450
-Wire Wire Line
-	8350 3050 8300 3050
-Wire Wire Line
-	8300 3050 8300 3450
-Wire Wire Line
-	8300 3850 8500 3850
-Wire Wire Line
-	8350 3450 8300 3450
-Connection ~ 8300 3450
-Wire Wire Line
-	8300 3450 8300 3850
 $Comp
 L power:PWR_FLAG #FLG0102
 U 1 1 5C81F551
@@ -970,4 +935,29 @@ Wire Wire Line
 Connection ~ 11000 3350
 Wire Wire Line
 	11000 3350 11000 3700
+$Comp
+L Regulator_Linear:LM2931AZ-5.0_TO92 U4
+U 1 1 5DC616F9
+P 1500 1850
+F 0 "U4" H 1500 2092 50  0000 C CNN
+F 1 "LM2931AZ-5.0_TO92" H 1500 2001 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 1500 2075 50  0001 C CIN
+F 3 "http://www.ti.com/lit/ds/symlink/lm2931-n.pdf" H 1500 1800 50  0001 C CNN
+	1    1500 1850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1500 2150 1500 2250
+Wire Wire Line
+	1500 2250 1200 2250
+Text Label 1200 2250 0    50   ~ 0
+GNDREF
+Wire Wire Line
+	1200 1850 850  1850
+Text Label 850  1850 0    50   ~ 0
+Vm
+Wire Wire Line
+	1800 1850 2150 1850
+Text Label 2150 1850 2    50   ~ 0
+Vin
 $EndSCHEMATC
