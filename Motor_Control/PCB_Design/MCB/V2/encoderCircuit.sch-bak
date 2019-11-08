@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:PCB_v2-cache
-EELAYER 26 0
+EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -27,7 +27,7 @@ Vreg
 Text HLabel 4300 2100 0    50   Input ~ 0
 GND
 $Comp
-L MyLibrary:SN75175N U3
+L PCB_v2-rescue:SN75175N-MyLibrary U3
 U 1 1 5C7C56D8
 P 5900 4200
 F 0 "U3" H 7000 4587 60  0000 C CNN
@@ -38,7 +38,7 @@ F 3 "" H 5900 4200 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L MyLibrary:SN74LVC245AN U2
+L PCB_v2-rescue:SN74LVC245AN-MyLibrary U2
 U 1 1 5C7C5A22
 P 5900 1900
 F 0 "U2" H 7000 2287 60  0000 C CNN
