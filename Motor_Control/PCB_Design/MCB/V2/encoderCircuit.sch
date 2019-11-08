@@ -14,128 +14,52 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 5500 4300 0    50   Input ~ 0
+Text HLabel 8000 3650 2    50   Input ~ 0
 ENC_A
-Text HLabel 5500 4200 0    50   Input ~ 0
+Text HLabel 8000 3800 2    50   Input ~ 0
 ENC_!A
-Text HLabel 8500 4400 2    50   Input ~ 0
+Text HLabel 8000 3950 2    50   Input ~ 0
 ENC_B
-Text HLabel 8500 4300 2    50   Input ~ 0
+Text HLabel 8000 4100 2    50   Input ~ 0
 ENC_!B
 Text HLabel 4300 1700 0    50   Input ~ 0
 Vreg
 Text HLabel 4300 2100 0    50   Input ~ 0
 GND
-$Comp
-L PCB_v2-rescue:SN75175N-MyLibrary U3
-U 1 1 5C7C56D8
-P 5900 4200
-F 0 "U3" H 7000 4587 60  0000 C CNN
-F 1 "SN75175N" H 7000 4481 60  0000 C CNN
-F 2 "MyLibrary:SN75175N" H 7000 4440 60  0001 C CNN
-F 3 "" H 5900 4200 60  0000 C CNN
-	1    5900 4200
-	1    0    0    -1  
-$EndComp
-$Comp
-L PCB_v2-rescue:SN74LVC245AN-MyLibrary U2
-U 1 1 5C7C5A22
-P 5900 1900
-F 0 "U2" H 7000 2287 60  0000 C CNN
-F 1 "SN74LVC245AN" H 7000 2181 60  0000 C CNN
-F 2 "MyLibrary:SN74LVC245AN" H 7000 2140 60  0001 C CNN
-F 3 "" H 5900 1900 60  0000 C CNN
-	1    5900 1900
-	1    0    0    -1  
-$EndComp
 Text HLabel 8600 1900 2    50   Input ~ 0
 3.3V
-Text Label 4600 1700 0    50   ~ 0
+Text Label 4450 1700 0    50   ~ 0
 Vreg
 Wire Wire Line
 	4300 1700 4600 1700
-Text Label 5400 4500 2    50   ~ 0
-Vreg
-Text Label 8500 4600 0    50   ~ 0
-Vreg
-Text Label 8500 4200 0    50   ~ 0
-Vreg
-Wire Wire Line
-	8500 4200 8100 4200
-Wire Wire Line
-	8500 4600 8100 4600
-Wire Wire Line
-	5900 4500 5400 4500
-Text Label 4600 2100 0    50   ~ 0
+Text Label 4450 2100 0    50   ~ 0
 GND
 Wire Wire Line
 	4600 2100 4300 2100
-Text Label 5400 4900 2    50   ~ 0
-GND
-Wire Wire Line
-	5900 4900 5400 4900
-Wire Wire Line
-	5900 4200 5500 4200
-Wire Wire Line
-	8500 4300 8450 4300
-Wire Wire Line
-	8500 4400 8150 4400
 $Comp
 L Device:R R7
 U 1 1 5C7C60CD
-P 5750 3850
-F 0 "R7" V 5543 3850 50  0000 C CNN
-F 1 "120" V 5634 3850 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 5680 3850 50  0001 C CNN
-F 3 "~" H 5750 3850 50  0001 C CNN
-	1    5750 3850
+P 7800 4450
+F 0 "R7" V 7593 4450 50  0000 C CNN
+F 1 "120" V 7684 4450 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 7730 4450 50  0001 C CNN
+F 3 "~" H 7800 4450 50  0001 C CNN
+	1    7800 4450
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	5900 3850 5900 4200
-Connection ~ 5900 4200
-Wire Wire Line
-	5500 4300 5600 4300
-Wire Wire Line
-	5600 3850 5600 4300
-Connection ~ 5600 4300
-Wire Wire Line
-	5600 4300 5900 4300
 $Comp
 L Device:R R8
 U 1 1 5C7C6CF9
-P 8300 3850
-F 0 "R8" V 8093 3850 50  0000 C CNN
-F 1 "120" V 8184 3850 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 8230 3850 50  0001 C CNN
-F 3 "~" H 8300 3850 50  0001 C CNN
-	1    8300 3850
+P 7800 3400
+F 0 "R8" V 7593 3400 50  0000 C CNN
+F 1 "120" V 7684 3400 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 7730 3400 50  0001 C CNN
+F 3 "~" H 7800 3400 50  0001 C CNN
+	1    7800 3400
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	8150 3850 8150 4400
-Connection ~ 8150 4400
-Wire Wire Line
-	8150 4400 8100 4400
-Wire Wire Line
-	8450 3850 8450 4300
-Connection ~ 8450 4300
-Wire Wire Line
-	8450 4300 8100 4300
-Wire Wire Line
-	5900 4400 5000 4400
-Wire Wire Line
-	8100 4500 8950 4500
-Wire Wire Line
-	5000 4400 5000 2000
-Wire Wire Line
 	5000 2000 5900 2000
-Wire Wire Line
-	8950 4500 8950 3100
-Wire Wire Line
-	8950 3100 5500 3100
-Wire Wire Line
-	5500 3100 5500 2100
 Wire Wire Line
 	5500 2100 5900 2100
 Text HLabel 8600 2100 2    50   Input ~ 0
@@ -146,20 +70,14 @@ Wire Wire Line
 	8600 2100 8100 2100
 Wire Wire Line
 	8100 2200 8600 2200
-Text Label 5500 1900 2    50   ~ 0
+Text Label 5650 1900 2    50   ~ 0
 Vreg
 Wire Wire Line
 	5500 1900 5900 1900
-Text Label 8400 2000 0    50   ~ 0
+Text Label 8250 2000 0    50   ~ 0
 GND
 Wire Wire Line
 	8100 2000 8400 2000
-NoConn ~ 5900 4600
-NoConn ~ 5900 4700
-NoConn ~ 5900 4800
-NoConn ~ 8100 4900
-NoConn ~ 8100 4800
-NoConn ~ 8100 4700
 NoConn ~ 8100 2300
 NoConn ~ 8100 2400
 NoConn ~ 8100 2500
@@ -175,4 +93,70 @@ NoConn ~ 5900 2300
 NoConn ~ 5900 2200
 Wire Wire Line
 	8100 1900 8600 1900
+$Comp
+L PCB_v2-rescue:SN65LVDT34D-MyLibrary U3
+U 1 1 5DD37C3C
+P 5900 3650
+F 0 "U3" H 7000 3937 60  0000 C CNN
+F 1 "SN65LVDT34D-MyLibrary" H 7000 3831 60  0000 C CNN
+F 2 "MyLibrary:SN75175N" H 7000 3890 60  0001 C CNN
+F 3 "" H 5900 3650 60  0000 C CNN
+	1    5900 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L MyLibrary:SN74LVC245APWE4 U2
+U 1 1 5DD3B7B6
+P 5900 1900
+F 0 "U2" H 7000 2287 60  0000 C CNN
+F 1 "SN74LVC245APWE4" H 7000 2181 60  0000 C CNN
+F 2 "MyLibrary:SN74LVC245AN" H 7000 2140 60  0001 C CNN
+F 3 "" H 5900 1900 60  0000 C CNN
+	1    5900 1900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6500 4100 5800 4100
+Wire Wire Line
+	6500 3650 5800 3650
+Text Label 5800 3650 0    50   ~ 0
+Vreg
+Text Label 5800 4100 0    50   ~ 0
+GND
+Wire Wire Line
+	7500 3650 7950 3650
+Wire Wire Line
+	7500 3800 7650 3800
+Wire Wire Line
+	7500 3950 7650 3950
+Wire Wire Line
+	7500 4100 7950 4100
+Wire Wire Line
+	7950 4450 7950 4100
+Connection ~ 7950 4100
+Wire Wire Line
+	7950 4100 8000 4100
+Wire Wire Line
+	7650 4450 7650 3950
+Connection ~ 7650 3950
+Wire Wire Line
+	7650 3950 8000 3950
+Wire Wire Line
+	7650 3400 7650 3800
+Connection ~ 7650 3800
+Wire Wire Line
+	7650 3800 8000 3800
+Wire Wire Line
+	7950 3400 7950 3650
+Connection ~ 7950 3650
+Wire Wire Line
+	7950 3650 8000 3650
+Wire Wire Line
+	5500 2100 5500 3950
+Wire Wire Line
+	5500 3950 6500 3950
+Wire Wire Line
+	5000 2000 5000 3800
+Wire Wire Line
+	5000 3800 6500 3800
 $EndSCHEMATC

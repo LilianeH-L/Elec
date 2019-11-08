@@ -12,6 +12,162 @@ K connector
 F ~
 $ENDCMP
 #
+$CMP L78L05_TO92
+D Positive 100mA 30V Linear Regulator, Fixed Output 5V, TO-92
+K Voltage Regulator 100mA Positive
+F http://www.st.com/content/ccc/resource/technical/document/datasheet/15/55/e5/aa/23/5b/43/fd/CD00000446.pdf/files/CD00000446.pdf/jcr:content/translations/en.CD00000446.pdf
+$ENDCMP
+#
+$CMP L78L06_TO92
+D Positive 100mA 30V Linear Regulator, Fixed Output 6V, TO-92
+K Voltage Regulator 100mA Positive
+F http://www.st.com/content/ccc/resource/technical/document/datasheet/15/55/e5/aa/23/5b/43/fd/CD00000446.pdf/files/CD00000446.pdf/jcr:content/translations/en.CD00000446.pdf
+$ENDCMP
+#
+$CMP L78L08_TO92
+D Positive 100mA 30V Linear Regulator, Fixed Output 8V, TO-92
+K Voltage Regulator 100mA Positive
+F http://www.st.com/content/ccc/resource/technical/document/datasheet/15/55/e5/aa/23/5b/43/fd/CD00000446.pdf/files/CD00000446.pdf/jcr:content/translations/en.CD00000446.pdf
+$ENDCMP
+#
+$CMP L78L09_TO92
+D Positive 100mA 30V Linear Regulator, Fixed Output 9V, TO-92
+K Voltage Regulator 100mA Positive
+F http://www.st.com/content/ccc/resource/technical/document/datasheet/15/55/e5/aa/23/5b/43/fd/CD00000446.pdf/files/CD00000446.pdf/jcr:content/translations/en.CD00000446.pdf
+$ENDCMP
+#
+$CMP L78L10_TO92
+D Positive 100mA 30V Linear Regulator, Fixed Output 10V, TO-92
+K Voltage Regulator 100mA Positive
+F http://www.st.com/content/ccc/resource/technical/document/datasheet/15/55/e5/aa/23/5b/43/fd/CD00000446.pdf/files/CD00000446.pdf/jcr:content/translations/en.CD00000446.pdf
+$ENDCMP
+#
+$CMP L78L12_TO92
+D Positive 100mA 30V Linear Regulator, Fixed Output 12V, TO-92
+K Voltage Regulator 100mA Positive
+F http://www.st.com/content/ccc/resource/technical/document/datasheet/15/55/e5/aa/23/5b/43/fd/CD00000446.pdf/files/CD00000446.pdf/jcr:content/translations/en.CD00000446.pdf
+$ENDCMP
+#
+$CMP L78L15_TO92
+D Positive 100mA 30V Linear Regulator, Fixed Output 15V, TO-92
+K Voltage Regulator 100mA Positive
+F http://www.st.com/content/ccc/resource/technical/document/datasheet/15/55/e5/aa/23/5b/43/fd/CD00000446.pdf/files/CD00000446.pdf/jcr:content/translations/en.CD00000446.pdf
+$ENDCMP
+#
+$CMP L78L18_TO92
+D Positive 100mA 30V Linear Regulator, Fixed Output 18V, TO-92
+K Voltage Regulator 100mA Positive
+F http://www.st.com/content/ccc/resource/technical/document/datasheet/15/55/e5/aa/23/5b/43/fd/CD00000446.pdf/files/CD00000446.pdf/jcr:content/translations/en.CD00000446.pdf
+$ENDCMP
+#
+$CMP L78L24_TO92
+D Positive 100mA 30V Linear Regulator, Fixed Output 24V, TO-92
+K Voltage Regulator 100mA Positive
+F http://www.st.com/content/ccc/resource/technical/document/datasheet/15/55/e5/aa/23/5b/43/fd/CD00000446.pdf/files/CD00000446.pdf/jcr:content/translations/en.CD00000446.pdf
+$ENDCMP
+#
+$CMP L78L33_TO92
+D Positive 100mA 30V Linear Regulator, Fixed Output 3.3V, TO-92
+K Voltage Regulator 100mA Positive
+F http://www.st.com/content/ccc/resource/technical/document/datasheet/15/55/e5/aa/23/5b/43/fd/CD00000446.pdf/files/CD00000446.pdf/jcr:content/translations/en.CD00000446.pdf
+$ENDCMP
+#
+$CMP LM2931
+D Positive 100mA 30V Linear Regulator, Fixed Output 5V, TO-92
+K Voltage Regulator 100mA Positive
+F http://www.fairchildsemi.com/ds/LM/LM78L05A.pdf
+$ENDCMP
+#
+$CMP LM2931AZ-5.0_TO92
+D 100mA Low drop-out regulator, Fixed Output 5V, TO-92
+K REGULATOR LDO 5V
+F http://www.ti.com/lit/ds/symlink/lm2931-n.pdf
+$ENDCMP
+#
+$CMP LM2936-3.0_TO92
+D 50mA Ultra-Low Quiescent Current LDO Voltage Regulator, 3.0V fixed output, TO-92
+K linear regulator ldo fixed positive
+F http://www.ti.com/lit/ds/symlink/lm2936.pdf
+$ENDCMP
+#
+$CMP LM2936-3.3_TO92
+D 50mA Ultra-Low Quiescent Current LDO Voltage Regulator, 3.3V fixed output, TO-92
+K linear regulator ldo fixed positive
+F http://www.ti.com/lit/ds/symlink/lm2936.pdf
+$ENDCMP
+#
+$CMP LM2936-5.0_TO92
+D 50mA Ultra-Low Quiescent Current LDO Voltage Regulator, 5.0V fixed output, TO-92
+K linear regulator ldo fixed positive
+F http://www.ti.com/lit/ds/symlink/lm2936.pdf
+$ENDCMP
+#
+$CMP LM78L05_TO92
+D Positive 100mA 30V Linear Regulator, Fixed Output 5V, TO-92
+K Voltage Regulator 100mA Positive
+F http://www.fairchildsemi.com/ds/LM/LM78L05A.pdf
+$ENDCMP
+#
+$CMP LM78L12_TO92
+D Positive 100mA 30V Linear Regulator, Fixed Output 12V, TO-92
+K Voltage Regulator 100mA Positive
+F http://www.fairchildsemi.com/ds/LM/LM78L05A.pdf
+$ENDCMP
+#
+$CMP LP2950-3.0_TO92
+D Positive 100mA 30V Linear Micropower Voltage Regulator, Fixed Output 3.0V, TO-92
+K Micropower Voltage Regulator 100mA Positive
+F http://www.ti.com/lit/ds/symlink/lp2950-n.pdf
+$ENDCMP
+#
+$CMP LP2950-3.3_TO92
+D Positive 100mA 30V Linear Micropower Voltage Regulator, Fixed Output 3.3V, TO-92
+K Micropower Voltage Regulator 100mA Positive
+F http://www.ti.com/lit/ds/symlink/lp2950-n.pdf
+$ENDCMP
+#
+$CMP LP2950-5.0_TO92
+D Micropower Voltage Regulators with Shutdown, 100mA, Fixed Output 5.0V, TO-92
+K Micropower Voltage Regulator 100mA Positive
+F http://www.ti.com/lit/ds/symlink/lp2951-n.pdf
+$ENDCMP
+#
+$CMP MC78L06_TO92
+D Positive 100mA 30V Linear Regulator, Fixed Output 6V, TO-92
+K Voltage Regulator 100mA Positive
+F http://www.fairchildsemi.com/ds/LM/LM78L05A.pdf
+$ENDCMP
+#
+$CMP MC78L08_TO92
+D Positive 100mA 30V Linear Regulator, Fixed Output 8V, TO-92
+K Voltage Regulator 100mA Positive
+F http://www.fairchildsemi.com/ds/LM/LM78L05A.pdf
+$ENDCMP
+#
+$CMP MC78L12_TO92
+D Positive 100mA 30V Linear Regulator, Fixed Output 12V, TO-92
+K Voltage Regulator 100mA Positive
+F http://www.fairchildsemi.com/ds/LM/LM78L05A.pdf
+$ENDCMP
+#
+$CMP MC78L15_TO92
+D Positive 100mA 30V Linear Regulator, Fixed Output 15V, TO-92
+K Voltage Regulator 100mA Positive
+F http://www.fairchildsemi.com/ds/LM/LM78L05A.pdf
+$ENDCMP
+#
+$CMP MC78L18_TO92
+D Positive 100mA 30V Linear Regulator, Fixed Output 18V, TO-92
+K Voltage Regulator 100mA Positive
+F http://pdf.datasheetcatalog.com/datasheet/vishay/mc78l00.pdf
+$ENDCMP
+#
+$CMP MC78L24_TO92
+D Positive 100mA 30V Linear Regulator, Fixed Output 24V, TO-92
+K Voltage Regulator 100mA Positive
+F http://pdf.datasheetcatalog.com/datasheet/vishay/mc78l00.pdf
+$ENDCMP
+#
 $CMP Molex_39-28-1083
 D MINI-FIT JR. Series, Series Number 5566, 4.2mm Pitch 8 Way 2 Row Straight PCB Header, Solder Termination, 7A
 F http://docs-asia.electrocomponents.com/webdocs/0460/0900766b80460da6.pdf
