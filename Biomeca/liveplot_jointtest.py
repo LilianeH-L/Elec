@@ -14,14 +14,11 @@ T1=ax.text(0.3,1,'')
 while True:
     style='round'
     #input des valeurs de 0 à 180 afin de tester
-    for angle in range (0,180):
-        #grosses lignes bleues
-        line1 = live_plotter_angle(ax,line1,angle,T1,style,a=1,identifier='',pause_time=0.1)
-        #traits fins noirs
-        #line2 = live_plotter_angle(ax,line2,angle,T1,style,a=2,identifier='',pause_time=0.05)
-        #points rouges
-        #line3 = live_plotter_angle(ax,line3,angle,T1,style,a=3,identifier='',pause_time=0.05)
-
-            
-       
-    
+    angleCoude=90
+    angleEpaule=30
+    #grosses lignes bleues
+    line1 = live_plotter_angle(ax,line1,angleCoude,angleEpaule,T1,style,a=1,identifier='',pause_time=0.1)
+    #traits fins noirs
+    #line2 = live_plotter_angle(ax,line2,angle,T1,style,a=2,identifier='',pause_time=0.05)
+    #points rouges
+    #line3 = live_plotter_angle(ax,line3,angle,T1,style,a=3,identifier='',pause_time=0.05)
