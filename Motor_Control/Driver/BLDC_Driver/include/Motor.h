@@ -1,7 +1,21 @@
 #include <Encoder.h>
 
+#define CW 1
+#define CCW 0
+
 void motorSetup();
 double readAngle(bool fullTurn);
+
+//Contrôle du moteur
+void breakMotor(bool toBreak);
+void enableMotor(bool toEnable);
+void turnMotor(float speed, int dir);
+void setDirection(int dir);
+void setSpeed(float speed);
+void faultDetected();
+
+void goToAngle(float angle);
+void turnTimer(float speed, int dir, float timeToTurn);
 
 //Pins
 const int resetPin = 2;

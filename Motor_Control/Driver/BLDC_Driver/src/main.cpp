@@ -23,10 +23,12 @@ void setup() {
 }
 
 void loop() {
-	digitalWrite(directionPin, HIGH);
-	digitalWrite(enablePin, HIGH);
-	digitalWrite(brakePin, LOW);
-	analogWrite(motorPin, 500);
+  	//goToAngle(10000);
+
+	// digitalWrite(directionPin, HIGH);
+	// digitalWrite(enablePin, HIGH);
+	// digitalWrite(brakePin, LOW);
+	// analogWrite(motorPin, 500);
 	// unsigned long currentMillis = millis();
 	// unsigned long targetMillis = currentMillis+2000;
 
