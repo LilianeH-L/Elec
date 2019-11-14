@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:PCB_v2-cache
-EELAYER 30 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -64,7 +64,7 @@ F 3 "~" H 3100 1350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Label 2500 1400 0    50   ~ 0
-Vm_in
+Vm
 Wire Wire Line
 	3100 1350 3100 1400
 $Comp
@@ -329,7 +329,7 @@ Wire Wire Line
 Text Label 6000 2200 2    50   ~ 0
 Vreg
 $Comp
-L PCB_v2-rescue:Molex_39-28-1083-MyLibrary J1
+L PCB_v2-rescue:Molex_39-28-1083-MyLibrary-PCB_v2-rescue J1
 U 1 1 5BE0BE2F
 P 1750 3050
 F 0 "J1" H 2150 3315 50  0000 C CNN
@@ -775,7 +775,7 @@ GNDREF
 Wire Wire Line
 	1050 1300 1200 1300
 Text Label 1050 1200 2    50   ~ 0
-Vm_in
+Vm
 Wire Wire Line
 	1050 1200 1200 1200
 Wire Wire Line
@@ -787,7 +787,7 @@ GNDREF
 Wire Wire Line
 	1100 800  1250 800 
 Text Label 1100 700  2    50   ~ 0
-Vm_in
+Vm
 Wire Wire Line
 	1100 700  1250 700 
 $Comp
@@ -895,7 +895,7 @@ GNDREF
 Wire Wire Line
 	1050 1850 700  1850
 Text Label 700  1850 0    50   ~ 0
-Vm_in
+Vm
 Wire Wire Line
 	1650 1850 2000 1850
 Text Label 2000 1850 2    50   ~ 0
@@ -906,103 +906,11 @@ Wire Wire Line
 	10050 2550 10350 2550
 Wire Wire Line
 	10050 2650 10350 2650
-$Comp
-L Device:LED Vert1
-U 1 1 5DCA1693
-P 10500 5500
-F 0 "Vert1" H 10493 5245 50  0000 C CNN
-F 1 "LED1" H 10493 5336 50  0000 C CNN
-F 2 "" H 10500 5500 50  0001 C CNN
-F 3 "~" H 10500 5500 50  0001 C CNN
-	1    10500 5500
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:LED Rouge1
-U 1 1 5DCB8BC5
-P 10500 5900
-F 0 "Rouge1" H 10493 5645 50  0000 C CNN
-F 1 "LED2" H 10493 5736 50  0000 C CNN
-F 2 "" H 10500 5900 50  0001 C CNN
-F 3 "~" H 10500 5900 50  0001 C CNN
-	1    10500 5900
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:LED Rouge2
-U 1 1 5DCC2745
-P 10500 6350
-F 0 "Rouge2" H 10493 6095 50  0000 C CNN
-F 1 "LED3" H 10493 6186 50  0000 C CNN
-F 2 "" H 10500 6350 50  0001 C CNN
-F 3 "~" H 10500 6350 50  0001 C CNN
-	1    10500 6350
-	-1   0    0    1   
-$EndComp
-Text Label 10800 5500 0    50   ~ 0
-GNDREF
 Text Label 10150 2450 0    50   ~ 0
 LED1
 Text Label 10150 2550 0    50   ~ 0
 LED2
 Text Label 10150 2650 0    50   ~ 0
-LED3
-Wire Wire Line
-	10650 5500 11100 5500
-Wire Wire Line
-	10650 5900 11100 5900
-Wire Wire Line
-	10650 6350 11100 6350
-Text Label 10800 5900 0    50   ~ 0
-GNDREF
-Text Label 10800 6350 0    50   ~ 0
-GNDREF
-$Comp
-L Device:R 330ohm1
-U 1 1 5DDD767E
-P 10200 5500
-F 0 "330ohm1" V 9993 5500 50  0000 C CNN
-F 1 "R10" V 10084 5500 50  0000 C CNN
-F 2 "Resistor_SMD:R_2010_5025Metric_Pad1.52x2.65mm_HandSolder" V 10130 5500 50  0001 C CNN
-F 3 "~" H 10200 5500 50  0001 C CNN
-	1    10200 5500
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R 330ohm2
-U 1 1 5DDF84A9
-P 10200 5900
-F 0 "330ohm2" V 9993 5900 50  0000 C CNN
-F 1 "R11" V 10084 5900 50  0000 C CNN
-F 2 "Resistor_SMD:R_2010_5025Metric_Pad1.52x2.65mm_HandSolder" V 10130 5900 50  0001 C CNN
-F 3 "~" H 10200 5900 50  0001 C CNN
-	1    10200 5900
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R 330ohm3
-U 1 1 5DE026F6
-P 10200 6350
-F 0 "330ohm3" V 9993 6350 50  0000 C CNN
-F 1 "R13" V 10084 6350 50  0000 C CNN
-F 2 "Resistor_SMD:R_2010_5025Metric_Pad1.52x2.65mm_HandSolder" V 10130 6350 50  0001 C CNN
-F 3 "~" H 10200 6350 50  0001 C CNN
-	1    10200 6350
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	10050 5500 9700 5500
-Wire Wire Line
-	10050 5900 9700 5900
-Wire Wire Line
-	10050 6350 9700 6350
-Text Notes 10000 5100 0    50   ~ 0
-Connector of the LEDs
-Text Label 9700 5500 0    50   ~ 0
-LED1
-Text Label 9700 5900 0    50   ~ 0
-LED2
-Text Label 9700 6350 0    50   ~ 0
 LED3
 $Comp
 L PCB_v2-rescue:LM2931-MyLibrary U4
@@ -1028,25 +936,6 @@ F 3 "~" H 1400 1300 50  0001 C CNN
 $EndComp
 NoConn ~ 1200 1400
 NoConn ~ 1250 900 
-$Comp
-L Switch:SW_DIP_x01 SW1
-U 1 1 5DCCF092
-P 2700 850
-F 0 "SW1" H 2700 1117 50  0000 C CNN
-F 1 "SW_DIP_x01" H 2700 1026 50  0000 C CNN
-F 2 "" H 2700 850 50  0001 C CNN
-F 3 "~" H 2700 850 50  0001 C CNN
-	1    2700 850 
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3000 850  3300 850 
-Wire Wire Line
-	2400 850  2100 850 
-Text Label 2100 850  0    50   ~ 0
-Vm_in
-Text Label 3200 850  0    50   ~ 0
-Vm
 Wire Wire Line
 	2550 3250 2800 3250
 Wire Wire Line
