@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:PCB_v2-cache
-EELAYER 26 0
+EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -94,7 +94,7 @@ NoConn ~ 5900 2200
 Wire Wire Line
 	8100 1900 8600 1900
 $Comp
-L PCB_v2-rescue:SN65LVDT34D-MyLibrary-PCB_v2-rescue U3
+L PCB_v2-rescue:SN65LVDT34D-MyLibrary-PCB_v2-rescue-PCB_v2-rescue U3
 U 1 1 5DD37C3C
 P 5900 3650
 F 0 "U3" H 7000 3937 60  0000 C CNN
@@ -105,7 +105,7 @@ F 3 "http://www.ti.com/lit/ds/symlink/sn65lvdt33.pdf" H 5900 3650 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L PCB_v2-rescue:SN74LVC245APWE4-MyLibrary U2
+L PCB_v2-rescue:SN74LVC245APWE4-MyLibrary-PCB_v2-rescue U2
 U 1 1 5DD3B7B6
 P 5900 1900
 F 0 "U2" H 7000 2287 60  0000 C CNN

@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:PCB_v2-cache
-EELAYER 26 0
+EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -329,7 +329,7 @@ Wire Wire Line
 Text Label 6000 2200 2    50   ~ 0
 Vreg
 $Comp
-L PCB_v2-rescue:Molex_39-28-1083-MyLibrary-PCB_v2-rescue J1
+L PCB_v2-rescue:Molex_39-28-1083-MyLibrary-PCB_v2-rescue-PCB_v2-rescue J1
 U 1 1 5BE0BE2F
 P 1750 3050
 F 0 "J1" H 2150 3315 50  0000 C CNN
@@ -913,7 +913,7 @@ LED2
 Text Label 10150 2650 0    50   ~ 0
 LED3
 $Comp
-L PCB_v2-rescue:LM2931-MyLibrary U4
+L PCB_v2-rescue:LM2931-MyLibrary-PCB_v2-rescue U4
 U 1 1 5DCAE5B5
 P 1350 1850
 F 0 "U4" H 1350 2092 50  0000 C CNN

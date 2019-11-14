@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:PCB_v2-cache
-EELAYER 30 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -100,7 +100,7 @@ P 5900 3650
 F 0 "U3" H 7000 3937 60  0000 C CNN
 F 1 "SN65LVDT34D-MyLibrary" H 7000 3831 60  0000 C CNN
 F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 7000 3890 60  0001 C CNN
-F 3 "" H 5900 3650 60  0000 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn65lvdt33.pdf" H 5900 3650 60  0001 C CNN
 	1    5900 3650
 	1    0    0    -1  
 $EndComp
@@ -111,7 +111,7 @@ P 5900 1900
 F 0 "U2" H 7000 2287 60  0000 C CNN
 F 1 "SN74LVC245APWE4" H 7000 2181 60  0000 C CNN
 F 2 "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm" H 7000 2140 60  0001 C CNN
-F 3 "" H 5900 1900 60  0000 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/sn74lvc245a.pdf" H 5900 1900 60  0001 C CNN
 	1    5900 1900
 	1    0    0    -1  
 $EndComp
