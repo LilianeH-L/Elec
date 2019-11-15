@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:PCB_v2-cache
-EELAYER 30 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -329,7 +329,7 @@ Wire Wire Line
 Text Label 6000 2200 2    50   ~ 0
 Vreg
 $Comp
-L PCB_v2-rescue:Molex_39-28-1083-MyLibrary-PCB_v2-rescue-PCB_v2-rescue J1
+L PCB_v2-rescue:Molex_39-28-1083-MyLibrary-PCB_v2-rescue-PCB_v2-rescue-PCB_v2-rescue J1
 U 1 1 5BE0BE2F
 P 1750 3050
 F 0 "J1" H 2150 3315 50  0000 C CNN
@@ -688,7 +688,7 @@ NoConn ~ 8600 5350
 NoConn ~ 8100 5450
 NoConn ~ 8600 5050
 Text Label 8900 5450 0    50   ~ 0
-Vreg
+Vin
 Text Label 8800 5250 0    50   ~ 0
 ENC_A
 Wire Wire Line
@@ -712,7 +712,7 @@ F2 "ENC_A" I L 4950 5750 50
 F3 "ENC_!A" I L 4950 6100 50 
 F4 "ENC_B" I L 4950 6450 50 
 F5 "ENC_!B" I L 4950 6800 50 
-F6 "Vreg" I R 6050 6250 50 
+F6 "Vin" I R 6050 6250 50 
 F7 "GND" I R 6050 6500 50 
 F8 "3.3V" I R 6050 6750 50 
 F9 "A" I R 6050 5750 50 
@@ -743,7 +743,7 @@ ENC_!B
 Wire Wire Line
 	4600 6800 4950 6800
 Text Label 6400 6250 2    50   ~ 0
-Vreg
+Vin
 Wire Wire Line
 	6400 6250 6050 6250
 Text Label 6400 6500 2    50   ~ 0
@@ -913,7 +913,7 @@ LED2
 Text Label 10150 2650 0    50   ~ 0
 LED3
 $Comp
-L PCB_v2-rescue:LM2931-MyLibrary-PCB_v2-rescue U4
+L PCB_v2-rescue:LM2931-MyLibrary-PCB_v2-rescue-PCB_v2-rescue U4
 U 1 1 5DCAE5B5
 P 1350 1850
 F 0 "U4" H 1350 2092 50  0000 C CNN
