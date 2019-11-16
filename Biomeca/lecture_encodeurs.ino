@@ -46,7 +46,6 @@ void loop() {
     Serial.println();
     positionLeft = newLeft;
     //positionRight = newRight;
-    Ser 
   }
   // if a character is sent from the serial monitor,
   // reset both back to zero.
