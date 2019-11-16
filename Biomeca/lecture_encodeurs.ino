@@ -21,6 +21,7 @@ void setup() {
 
 long positionLeft  = -999;
 //long positionRight = -999;
+debut = true;
 
 void loop() {
   long newLeft; //, newRight;
@@ -31,13 +32,21 @@ void loop() {
   else if (newLeft < 0)
     newLeft = newLeft%360 + 360;
   if (newLeft != positionLeft) { //|| newRight != positionRight) {
+    if (debut == true) {
+      t_debut = millis();
+      debut = false;
+      }
+    temps = millis() - temps_debut;
     Serial.print("Left = ");
     Serial.print(newLeft);
     //Serial.print(", Right = ");
     //Serial.print(newRight);
+    Serial.print("Time = ");
+    Serial.print(temps);
     Serial.println();
     positionLeft = newLeft;
     //positionRight = newRight;
+    Ser 
   }
   // if a character is sent from the serial monitor,
   // reset both back to zero.
