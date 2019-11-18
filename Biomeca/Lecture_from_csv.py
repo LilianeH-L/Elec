@@ -2,7 +2,7 @@ import csv
 
 
 def charger_mesures (file_name):
-    mesures = [];
+    mesures = []
     with open(file_name, newline = '', encoding = "utf-8") as file:
         reader = csv.DictReader(file, delimiter = ";")
         for row in reader:
@@ -10,7 +10,7 @@ def charger_mesures (file_name):
     return mesures
 
 def charger_positions (file_name):
-    positions = [];
+    positions = []
     with open(file_name, newline = "", encoding = "utf-8") as file:
         reader = csv.DictReader(file, delimiter = ";")
         for row in reader:

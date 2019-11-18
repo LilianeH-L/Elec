@@ -43,7 +43,8 @@ def process_serial_buffer(q):
         processed_packets = processed_packets + 1
         if processed_packets >= kNumPacketsToAcquire: #Si on a toutes les donnees desirees on save, sinon on recommence la boucle pour une nouvelle electrode
             np.save(movement_class + "_" + str(kAcquisitionTime) + "s_" + str(kSamplePerSecond) + "Hz_" +
-                    acquisition_number, emg_data)
+                    acquisition_number, emg_data) #enregistre les données du tableau emg_data dans un fichier .npy
+                                                #du style abduction_3s_200Hz_1.npy 
             os._exit(0)
 
 
