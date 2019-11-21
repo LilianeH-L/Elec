@@ -5,11 +5,13 @@ import threading
 import os
 import math
 												#Commencer par le main pour mieux comprendre
-kNElectrodes = 9
+kNElectrodes = 1
 kSizePacket = 350
 kNSamplesPerPacket = int(kSizePacket / 2)
-kSamplePerSecond = 2000
+kSamplePerSecond = 10
 
+
+#info sur ce qu'on veut mesurer, combien de temps, utile pour stocker
 print("Temps d'acquisition?")
 kAcquisitionTime = input()
 
@@ -19,12 +21,16 @@ movement_class = input()
 print("Numéro d'acquisition?")
 acquisition_number = input()
 
+#jusqu'au numéro de packets à prendre (n'est pas défini dans le code, à corriger) va enregistrer 
+#dans un array nommé emg_data et le sauvegarder en format binary, va ensuite sortir
+#
 def process_serial_buffer(q):
     electrode = q.get()
     processed_packets = 0
-    emg_data = np.zeros((kNElectrodes, int(kNumPacketsToAcquire * kNSamplesPerPacket / kNElectrodes)), dtype=int)
+    #np.zeros crée un array de 0, de taille kNElectrodes x kNumPacketsToAcquire * kNSamplesPerPacket / kNElectrodes
+    emg_data = np.zeros((kNElectrodes, int(int(kAcquisitionTime)*kSamplePerSecond / kNElectrodes)), dtype=int)
     while True:
-        packet = np.zeros(kNSamplesPerPacket, dtype=int)
+        packet = np.zeros(kSamplePerSecond, dtype=int)
         for i in range(0, kSizePacket, 2):
             low = q.get()
             high = q.get()
@@ -52,7 +58,7 @@ def main():
     port_open = False	#Ouverture du port du Teensy pour debuter la lecture
     while not port_open:
         try:
-            ser = serial.Serial("COM3", timeout=None, baudrate=115000, xonxoff=False, rtscts=False, dsrdtr=False)
+            ser = serial.Serial("COM5", timeout=None, baudrate=9600, xonxoff=False, rtscts=False, dsrdtr=False)
             ser.flushInput()
             ser.flushOutput()
             port_open = True
