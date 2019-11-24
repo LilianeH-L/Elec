@@ -17,18 +17,18 @@ Encoder knob3(2, 3);
 
 void setup() {
   Serial.begin(9600);
-  Serial.println("TwoKnobs Encoder Test:");
+  Serial.println("Salut toi");
 }
 
-long position1  = -999;
-long position2 = -999;
-long position3 = -999;
+int position1  = -999;
+int position2 = -999;
+int position3 = -999;
 //bool debut = true;
 //unsigned long t_debut = 0;
 //unsigned long pos = 0;
 
 void loop() {
-  long new1, new2, new3;
+  int new1, new2, new3;
   new1 = knob1.read()*360/1600; // 1600 pics/tour convertis en degrés
   new2 = knob2.read();
   new3 = knob3.read();

@@ -4,6 +4,7 @@ import queue
 import threading
 import os
 import math
+import time
 												#Commencer par le main pour mieux comprendre
 kNEncodeurs = 1 
 
@@ -17,22 +18,23 @@ acquisition_number = input()
 
 def process_serial_buffer(q):
     angles_data = np.zeros((1, kNEncodeurs+1), dtype=int)
+    startTimestamp = time.time()*1000 # temps au début de la mesure
     while True: 
         # on lit le premier caractère (16 bits)
-        low = q.get()
-        high = q.get()
-        sample = low + (high << 8) 
+        sample = q.get()
         if sample == '#': # si c'est un #, ça indique le début d'une position
-                position = np.zeros((kNEncodeurs+1,), dtype=int)
-                for i in range(0,kNEncodeurs-1): # on enregistre chaque angle (et le temps ?) dans une colonne de position
+                position = np.zeros((1,kNEncodeurs+1), dtype=int)
+                for i in range(0,kNEncodeurs-1): # on enregistre chaque angle dans une colonne de position
                     low = q.get()
                     high = q.get()
                     sample = low + (high << 8) 
                     position [i] = sample
+                timestamp = time.time()*1000 - startTimestamp # timestamp de la position enregistrée
+                position [0][kNEncodeurs] = timestamp
                 if angles_data.shape[0] == 1: # si c'est la première position, angles_data=position
                     angles_data = position
                 else:
-                    angles_data.append(position) # sinon on ajoute position à la fin d'angles_data
+                    np.append(angles_data, position, axis=0) # sinon on ajoute position à la fin d'angles_data
         if sample == '%': # si on lit %, ça indique que la mesure est terminée
             np.save(movement_class + "_" + acquisition_number, angles_data) # on enregistre les données
                                                                             # au format "abduction_1.npy" 
