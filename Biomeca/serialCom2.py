@@ -25,7 +25,7 @@ def process_serial_buffer(q):
         #print(chr(sample))
         if sample == 35: # si c'est un #, ça indique le début d'une position
             position = np.zeros((1,kNEncodeurs+1), dtype=int)
-            for i in range(0,kNEncodeurs-1): # on enregistre chaque angle dans une colonne de position
+            for i in range(0,kNEncodeurs): # on enregistre chaque angle dans une colonne de position
                 low = q.get()
                 high = q.get()
                 sampleValeur = low + (high << 8) 
