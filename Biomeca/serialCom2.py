@@ -34,7 +34,7 @@ def process_serial_buffer(q):
                 if angles_data.shape[0] == 1: # si c'est la première position, angles_data=position
                     angles_data = position
                 else:
-                    np.append(angles_data, position, axis=0) # sinon on ajoute position à la fin d'angles_data
+                    angles_data = np.append(angles_data, position, axis=0) # sinon on ajoute position à la fin d'angles_data
         if sample == '%': # si on lit %, ça indique que la mesure est terminée
             np.save(movement_class + "_" + acquisition_number, angles_data) # on enregistre les données
                                                                             # au format "abduction_1.npy" 
