@@ -23,18 +23,24 @@ acquisition_number = input()
 
 #jusqu'au numéro de packets à prendre (n'est pas défini dans le code, à corriger) va enregistrer 
 #dans un array nommé emg_data et le sauvegarder en format binary, va ensuite sortir
-#
+
+#temps_depart=time.time()
 def process_serial_buffer(q):
     electrode = q.get()
     processed_packets = 0
     #np.zeros crée un array de 0, de taille kNElectrodes x kNumPacketsToAcquire * kNSamplesPerPacket / kNElectrodes
+    #emg_data=[]
     emg_data = np.zeros((kNElectrodes, int(int(kAcquisitionTime)*kSamplePerSecond / kNElectrodes)), dtype=int)
     while True:
         packet = np.zeros(kSamplePerSecond, dtype=int)
         for i in range(0, kSizePacket, 2):
             low = q.get()
             high = q.get()
+            #donnée=q.get()
+            #temps=time.time()-temps_depart
+            #sample=donnée + (temps << 64)
             sample = low + (high << 8) #Sample=donnee lue
+            #emg_data.append(sample)
             packet[int(i / 2)] = sample #Packet=ensemble de samples pour une electrode (dans notre cas ce sera plutot un encodeur)
 
 			#Information est lue par increments de 8 bytes mais la donnee est de 16 bytes, 

@@ -22,20 +22,25 @@ def process_serial_buffer(q):
     while True: 
         # on lit le premier caractère (16 bits)
         sample = q.get()
-        if sample == '#': # si c'est un #, ça indique le début d'une position
-                position = np.zeros((1,kNEncodeurs+1), dtype=int)
-                for i in range(0,kNEncodeurs-1): # on enregistre chaque angle dans une colonne de position
-                    low = q.get()
-                    high = q.get()
-                    sample = low + (high << 8) 
-                    position [i] = sample
-                timestamp = time.time()*1000 - startTimestamp # timestamp de la position enregistrée
-                position [0][kNEncodeurs] = timestamp
-                if angles_data.shape[0] == 1: # si c'est la première position, angles_data=position
-                    angles_data = position
-                else:
-                    angles_data = np.append(angles_data, position, axis=0) # sinon on ajoute position à la fin d'angles_data
-        if sample == '%': # si on lit %, ça indique que la mesure est terminée
+        #print(chr(sample))
+        if sample == 35: # si c'est un #, ça indique le début d'une position
+            position = np.zeros((1,kNEncodeurs+1), dtype=int)
+            for i in range(0,kNEncodeurs-1): # on enregistre chaque angle dans une colonne de position
+                low = q.get()
+                high = q.get()
+                sampleValeur = low + (high << 8) 
+#problème ici: rentre pas dans la boucle
+                print(sampleValeur)
+                position [0][i] = sampleValeur
+            timestamp = time.time()*1000 - startTimestamp # timestamp de la position enregistrée
+            position [0][kNEncodeurs] = timestamp
+            print(position)
+            if angles_data.shape[0] == 1: # si c'est la première position, angles_data=position
+                angles_data = position
+            else:
+                angles_data = np.append(angles_data, position, axis=0) # sinon on ajoute position à la fin d'angles_data
+        if sample == 37: # si on lit %, ça indique que la mesure est terminée
+            print("wesh")
             np.save(movement_class + "_" + acquisition_number, angles_data) # on enregistre les données
                                                                             # au format "abduction_1.npy" 
             os._exit(0)

@@ -6,7 +6,7 @@
 #define ENCODER_OPTIMIZE_INTERRUPTS
 #include <Encoder.h>
 
-// Change these pin numbers to the pins connected to your encoder.
+// Change these pin numbers to the pins connected to your e ncoder.
 //   Best Performance: both pins have interrupt capability
 //   Good Performance: only the first pin has interrupt capability
 //   Low Performance:  neither pin has interrupt capability
@@ -14,10 +14,11 @@ Encoder knob1(14, 15);
 Encoder knob2(7, 8);
 Encoder knob3(2, 3);
 //   avoid using pins with LEDs attached
-
+int pinOI=9;
 void setup() {
   Serial.begin(9600);
   Serial.println("Salut toi");
+  pinMode(pinOI, INPUT);
 }
 
 int position1  = -999;
@@ -75,11 +76,16 @@ void loop() {
   
   // if a character is sent from the serial monitor,
   // send a signal to indicate the end of the measure
-  if (Serial.available()) {
+  /*if (Serial.available()) {
     Serial.read();
     Serial.print('%');
     knob1.write(0);
     knob2.write(0);
     knob3.write(0);
+  }*/
+  if(digitalRead(pinOI)==HIGH){
+     Serial.print("%");
+     exit(0);
   }
+  
 }
