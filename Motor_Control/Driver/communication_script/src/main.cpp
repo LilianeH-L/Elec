@@ -5,9 +5,11 @@ void setup() {
   Serial.begin(9600);
   pinMode(13,OUTPUT);
   Serial.setTimeout(60000);
+  Wire.begin(4);                // join i2c bus with address #4
+  
 }
 String alphabet = "";
-
+ 
 void loop() {
 
   if(Serial.available()) { // read the incoming byte:
@@ -17,7 +19,7 @@ void loop() {
     
     //transmission
     Wire.beginTransmission(18);
-    for(int i =0; i < alphabet.length() ;i++){
+    for(unsigned int i = 0; i < alphabet.length() ;i++){
       Wire.write(alphabet[i]);
     }
 
@@ -25,7 +27,9 @@ void loop() {
   
     alphabet= "";
   }
- 
- 
+
 }
+
+
+
 
