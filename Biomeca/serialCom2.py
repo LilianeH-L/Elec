@@ -6,7 +6,7 @@ import os
 import math
 import time
 												#Commencer par le main pour mieux comprendre
-kNEncodeurs = 1 
+kNEncodeurs = 3
 
 #info sur ce qu'on veut mesurer, combien de temps, utile pour stocker
 print("Classe de mouvement?")
@@ -19,6 +19,7 @@ acquisition_number = input()
 def process_serial_buffer(q):
     angles_data = np.zeros((1, kNEncodeurs+1), dtype=int)
     startTimestamp = time.time()*1000 # temps au début de la mesure
+    FirstPos = True
     while True: 
         # on lit le premier caractère (16 bits)
         sample = q.get()
@@ -29,14 +30,14 @@ def process_serial_buffer(q):
                 low = q.get()
                 high = q.get()
                 sampleValeur = low + (high << 8) 
-#problème ici: rentre pas dans la boucle
-                print(sampleValeur)
                 position [0][i] = sampleValeur
             timestamp = time.time()*1000 - startTimestamp # timestamp de la position enregistrée
             position [0][kNEncodeurs] = timestamp
             print(position)
-            if angles_data.shape[0] == 1: # si c'est la première position, angles_data=position
+            if FirstPos == True: # si c'est la première position, angles_data=position
                 angles_data = position
+                print('yo')
+                FirstPos = False
             else:
                 angles_data = np.append(angles_data, position, axis=0) # sinon on ajoute position à la fin d'angles_data
         if sample == 37: # si on lit %, ça indique que la mesure est terminée
@@ -50,7 +51,7 @@ def main():
     port_open = False	#Ouverture du port du Teensy pour debuter la lecture
     while not port_open:
         try:
-            ser = serial.Serial("COM5", timeout=None, baudrate=9600, xonxoff=False, rtscts=False, dsrdtr=False)
+            ser = serial.Serial("COM7", timeout=None, baudrate=9600, xonxoff=False, rtscts=False, dsrdtr=False)
             ser.flushInput()
             ser.flushOutput()
             port_open = True

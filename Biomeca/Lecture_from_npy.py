@@ -8,6 +8,7 @@ def load_data (): # chargement de toutes les données enregistrées
     global movements_names
     for mvt in movements_names:
         load_movement(mvt)
+    print(movements)
 
 def load_movement (mvt_class): # chargement d'un mouvement
     global movements
@@ -33,6 +34,9 @@ class Movement :
                 file_name = self.id + "_" + str(acquisition_num) + '.npy'
                 existingMeasure = path.exists(file_name) # on regarde s'il existe un fichier content la mesure suivante
         return measures
+    
+    def __repr__(self):
+        return self.id
 
 class Measures :
     def __init__(self, mvt, id):
@@ -43,17 +47,22 @@ class Measures :
         positions = []
         file_name = mvt + "_" + str(self.id) + '.npy'
         data = np.load(file_name) # chargement du fichier correspondant à la mesure en question
+        print(data)
         for row in data:
-            positions.append(Positions(row[0],row[1]))
-            #positions.append(Positions(row[0],row[1],row[2],row[3])) # definition de la liste de positions
+            positions.append(Positions(row[0],row[1],row[2],row[3])) # definition de la liste de positions
         return positions
+    
+    def __repr__(self):
+        return self.id
 
 class Positions :
-    def __init__(self, angle1, timestamp):
-    #def __init__(self, angle1, angle2, angle3, timestamp):
+    def __init__(self, angle1, angle2, angle3, timestamp):
         self.angle1 = angle1
-        #self.angle2 = angle2
-        #self.angle3 = angle3
+        self.angle2 = angle2
+        self.angle3 = angle3
         self.timestamp = timestamp
+    
+    def __repr__(self):
+        return self.angle1
 
 load_data()

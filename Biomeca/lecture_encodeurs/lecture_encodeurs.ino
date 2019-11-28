@@ -55,20 +55,23 @@ void loop() {
   
     
   if (new1 != position1 || new2 != position2 || new3 != position3) {
-//    if (debut == true) {
-//      t_debut = millis();
-//      debut = false;
-//      }
-//    unsigned long temps = millis() - t_debut;
     Serial.print('#');
 //    Serial.print("1 = ");
-    Serial.print(new1);
+    byte new1Byte1 = new1 & 0b11111111;
+    byte new1Byte2= new1 >>8;
+    Serial.write(new1Byte1);
+    Serial.write(new1Byte2);
 //    //Serial.print(", 2 = ");
-    Serial.print(new2);
-    Serial.print(new3);
-//    Serial.print(" Time = ");
-//    Serial.print(temps);
-//    Serial.println();
+    byte new2Byte1 = new2 & 0b11111111;
+    byte new2Byte2= new2 >>8;
+    Serial.write(new2Byte1);
+    Serial.write(new2Byte2);
+//    //Serial.print(", 3 = ");
+    byte new3Byte1 = new3 & 0b11111111;
+    byte new3Byte2= new3 >>8;
+    Serial.write(new3Byte1);
+    Serial.write(new3Byte2);
+
     position1 = new1;
     position2 = new2;
     position3 = new3;
