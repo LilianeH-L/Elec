@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include "Spi_Driver.h"
 #include "Motor.h"
+#include "SerialCom.h"
 
 /*
 Taches à faire :
@@ -20,41 +21,23 @@ void setup() {
   Serial.println("Starting");
   SPISetup();
   motorSetup();
+	delay(2000);
+  Serial.println("Setup done");
+  // turnMotor(1500, CW);
 }
 
 void loop() {
-  	//goToAngle(10000);
+  // int goalAngle = readSerial();
+  // goToAngle(goalAngle);
 
-	// digitalWrite(directionPin, HIGH);
-	// digitalWrite(enablePin, HIGH);
-	// digitalWrite(brakePin, LOW);
-	// analogWrite(motorPin, 500);
-	// unsigned long currentMillis = millis();
-	// unsigned long targetMillis = currentMillis+2000;
 
-	// Serial.println(encoder.read());
-	// while (currentMillis < targetMillis);
-	// {
-	// Serial.println(encoder.read()*countToAngleFactor);
-		
-	// }
-	
-	// //delay(2000);
+  //Serial.println(readAngle(false));
 
-	// digitalWrite(enablePin, LOW);
-	// digitalWrite(brakePin, HIGH);
-	// delay(100);
+  //turnMotor(2000, CCW);
+  // testEncoder();
+  // Serial.println(readAngle(false));
 
-	// digitalWrite(directionPin, LOW);
-	// digitalWrite(enablePin, HIGH); 
-	// digitalWrite(brakePin, LOW);
-	// analogWrite(motorPin, 500);
-	// Serial.println(encoder.read());
-
-	// delay(2000);
-
-	// digitalWrite(enablePin, LOW);
-	// digitalWrite(brakePin, HIGH);
-	// delay(100);
+  //Uncomment to control with electrods
+  goToAngle(electrodControl());
 
 }

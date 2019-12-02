@@ -7,23 +7,33 @@
 int upcnt = 0;
 int downcnt = 0;
 int delay_time = 10;
-bool up = true;
-int upThres = 700;
+bool up = false;
+
+
+int upThres = 250;
+int upCountThres = 500;
+
 int downThres = 550;
+int downCountThres = 500;
+
 int comPin = 18;
+int biceps;
 
 void setup() {
   pinMode(13, OUTPUT);
   pinMode(comPin, OUTPUT);
   digitalWriteFast(13, HIGH);
+  delay(1000);
 }
 
 
 void loop() {
- 
-  auto biceps = analogRead(15);
+
+  biceps = analogRead(15);
+  //auto triceps = analogRead(16);
   Serial.print(biceps);
   Serial.print("\t");
+  //Serial.println(triceps);
 
   if (up)
   {
@@ -34,12 +44,11 @@ void loop() {
     else 
       downcnt = 0;
 
-    if (downcnt > 500 / delay_time)
+    if (downcnt > downCountThres / delay_time)
     {
       up = false;
-      
-    digitalWrite(comPin, up);
-    digitalWrite(13, up);
+      digitalWrite(comPin, up);
+      digitalWrite(13, up);
     }
     
   }
@@ -52,15 +61,12 @@ void loop() {
     else 
       upcnt = 0;
 
-    if (upcnt > 500 / delay_time)
+    if (upcnt > upCountThres / delay_time)
     {
       up = true;
-      
-    digitalWrite(comPin, up);
-    digitalWrite(13, up);
+      digitalWrite(comPin, up);
+      digitalWrite(13, up);
     }
-
   }
   delay(delay_time);
-
 }

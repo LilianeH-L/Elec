@@ -1,3 +1,6 @@
+#ifndef Spi_Dirver_h
+#define Spi_Dirver_h
+
 #include <SPI.h>
 
 //Fonctions SPI
@@ -15,3 +18,5 @@ const byte faultReg = 0x2a;
 const int maxSpeed = 480000; //Speed of the SPI (HZ)
 const int CS = 10;
 const byte registersAdress[] = {0x00,0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09,0x0A,0x0B,0x2A };
+
+#endif
