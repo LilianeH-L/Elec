@@ -1,5 +1,6 @@
 #include "SerialCom.h"
 
+
 //Choose the commande to execute, #reset reset les angles; #arm arms the esc, #setkp, #setkd ou #setki to change one of those parameters
 void executeCommande(String commande) {
 	if (commande == "reset")
@@ -10,6 +11,12 @@ void executeCommande(String commande) {
         
     if (commande == "spiSetup")
         SPISetup();
+	
+	if (commande == "demo"){
+		demo();
+	}
+	
+	if (commande == "toggleControl");
 		
 }
 
@@ -26,20 +33,30 @@ int readSerial() {
 	}
 
 	if (commande.length() > 0) {
-		Serial.println(commande);  //so you can see the captured string 
+		//Serial.println(commande);  //so you can see the captured string 
 
 		if (commande[0] == '#') {
 			commande = commande.substring(1);
-			Serial.print("Commande : ");
+			int len = commande.length();
+			commande.remove(len-1, 1);
+
+			Serial.print("Commande: ");
 			Serial.println(commande);
+
 			executeCommande(commande);
+			if (commande == "toggleControl"){
+				Serial.println("Toggling");
+				return -1;
+			}
 		}
 
-		if (commande[0] == '=') {
+		//Set encoder
+		else if (commande[0] == '=') {
 			double angle = double(commande.substring(1).toInt());
             setAngle(angle);
 		}
 
+		//Set goal angle
 		else {
 			int n = commande.toInt();  //convert readString into a number
 			float angleToGo = n;
@@ -49,9 +66,10 @@ int readSerial() {
 			return(angleToGo);
             //goToAngle(angleToGo);
 		}
+
 		commande = ""; //empty for next input
 	}
-	return oldAngle;
+	return 0;
 }
 
 

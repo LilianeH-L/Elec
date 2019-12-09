@@ -26,6 +26,8 @@ void setup() {
   // turnMotor(1500, CW);
 }
 
+bool toElectrodControl = false;
+
 void loop() {
   // int goalAngle = readSerial();
   // goToAngle(goalAngle);
@@ -38,6 +40,16 @@ void loop() {
   // Serial.println(readAngle(false));
 
   //Uncomment to control with electrods
-  goToAngle(electrodControl());
+  
+  int val = readSerial();
+  if (val == - 1){
+    toElectrodControl = !toElectrodControl;
+    Serial.print("Control switched to : ");
+    Serial.println(toElectrodControl ? "Electrod" : "Computer");
+  }
+
+  if (toElectrodControl)
+    goToAngle(electrodControl());
+  
 
 }

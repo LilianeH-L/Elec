@@ -29,6 +29,7 @@ void testEncoder();
 void goToAngle(float angle);
 void turnTimer(float speed, int dir, unsigned long timeToTurn);
 float electrodControl();
+void demo(); //Demo pour Génial
 
 //Pins
 const int resetPin = 2;
