@@ -173,13 +173,14 @@ float electrodControl(){
 void demo(){
 	Serial.println("Starting Demo...");
 	int maxAngle = -70;
+	int delay_time = 1350;
 	goToAngle(maxAngle);
-	delay(1500);
+	delay(delay_time);
 	stopMotor();
-	delay(1000);
+	delay(1500);
 
 	goToAngle(0);
-	delay(1500);
+	delay(delay_time);
 	stopMotor();
 
 	Serial.println("Demo over");

@@ -40,7 +40,6 @@ void loop() {
   // Serial.println(readAngle(false));
 
   //Uncomment to control with electrods
-  
   int val = readSerial();
   if (val == - 1){
     toElectrodControl = !toElectrodControl;

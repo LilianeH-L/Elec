@@ -11,7 +11,7 @@ int delay_time = 10;
 
 bool up = false;
 int upcnt = 0;
-int upThres = 275;
+int upThres = 325;
 int upCountThres = 200;
 int upDelay = 1500;
 
@@ -23,7 +23,7 @@ int downCountThres = 750;
 
 int maxCount = 0;
 bool maxReached = false;
-int maxThres = 950;
+int maxThres = 850;
 int maxCountThres = 300;
 
 void setup() {
@@ -81,6 +81,7 @@ void loop() {
       maxReached = false;
       digitalWrite(comPin, up);
       digitalWrite(13, up);
+      delay(downDelay);
     }
 
 
