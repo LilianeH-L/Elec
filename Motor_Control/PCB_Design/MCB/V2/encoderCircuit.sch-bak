@@ -23,13 +23,13 @@ ENC_B
 Text HLabel 8000 4100 2    50   Input ~ 0
 ENC_!B
 Text HLabel 4300 1700 0    50   Input ~ 0
-Vreg
+Vin
 Text HLabel 4300 2100 0    50   Input ~ 0
 GND
 Text HLabel 8600 1900 2    50   Input ~ 0
 3.3V
 Text Label 4450 1700 0    50   ~ 0
-Vreg
+Vin
 Wire Wire Line
 	4300 1700 4600 1700
 Text Label 4450 2100 0    50   ~ 0
@@ -71,7 +71,7 @@ Wire Wire Line
 Wire Wire Line
 	8100 2200 8600 2200
 Text Label 5650 1900 2    50   ~ 0
-Vreg
+Vin
 Wire Wire Line
 	5500 1900 5900 1900
 Text Label 8250 2000 0    50   ~ 0
@@ -94,7 +94,7 @@ NoConn ~ 5900 2200
 Wire Wire Line
 	8100 1900 8600 1900
 $Comp
-L PCB_v2-rescue:SN65LVDT34D-MyLibrary-PCB_v2-rescue U3
+L PCB_v2-rescue:SN65LVDT34D-MyLibrary-PCB_v2-rescue-PCB_v2-rescue-PCB_v2-rescue U3
 U 1 1 5DD37C3C
 P 5900 3650
 F 0 "U3" H 7000 3937 60  0000 C CNN
@@ -105,7 +105,7 @@ F 3 "http://www.ti.com/lit/ds/symlink/sn65lvdt33.pdf" H 5900 3650 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L PCB_v2-rescue:SN74LVC245APWE4-MyLibrary U2
+L PCB_v2-rescue:SN74LVC245APWE4-MyLibrary-PCB_v2-rescue-PCB_v2-rescue U2
 U 1 1 5DD3B7B6
 P 5900 1900
 F 0 "U2" H 7000 2287 60  0000 C CNN
@@ -120,7 +120,7 @@ Wire Wire Line
 Wire Wire Line
 	6500 3650 5800 3650
 Text Label 5800 3650 0    50   ~ 0
-Vreg
+Vin
 Text Label 5800 4100 0    50   ~ 0
 GND
 Wire Wire Line
