@@ -1,11 +1,4 @@
-16313596566939926
-39-28-1083
-SHDR8W125P550X420_2X4_1800X960X1310P
-39-28-1083
-Connector
-0
-8
-8
+16301030725223637
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -50420,55 +50413,6 @@ mounting hole 8.4mm m8
 0
 9
 1
-MyLibrary
-DRV8302DCAR
-
-
-0
-57
-57
-MyLibrary
-DRV8308RHAR
-
-
-0
-41
-41
-MyLibrary
-Molex,1x3
-Through hole straight socket strip, 1x03, 2.54mm pitch, single row (from Kicad 4.0.7), script generated
-Through hole socket strip THT 1x03 2.54mm single row
-0
-3
-3
-MyLibrary
-Molex,1x3,Right
-Through hole straight socket strip, 1x03, 2.54mm pitch, single row (from Kicad 4.0.7), script generated
-Through hole socket strip THT 1x03 2.54mm single row
-0
-3
-3
-MyLibrary
-SN74LVC245AN
-
-
-0
-20
-20
-MyLibrary
-SN75175N
-
-
-0
-16
-16
-MyLibrary
-TeensyLC
-Through hole straight pin header, 2x14, 2.54mm pitch, double rows
-Through hole pin header THT 2x14 2.54mm double row
-0
-28
-28
 NetTie
 NetTie-2_SMD_Pad0.5mm
 Net tie, 2 pin, 0.5mm square SMD pads
