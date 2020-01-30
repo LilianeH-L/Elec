@@ -35,12 +35,13 @@ void loop() {
 
   //Serial.println(readAngle(false));
 
+  //readRegisters();
 	enableMotor(true);
 	breakMotor(false);
 	digitalWrite(directionPin, LOW);
 	analogWrite(motorPin, 1000);
-  // testEncoder();
-  // Serial.println(readAngle(false));
+  testEncoder();
+  Serial.println(readAngle(false));
 
   //Uncomment to control with electrods
   // int val = readSerial();
