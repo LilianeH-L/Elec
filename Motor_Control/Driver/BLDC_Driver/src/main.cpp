@@ -35,20 +35,23 @@ void loop() {
 
   //Serial.println(readAngle(false));
 
-  //turnMotor(2000, CCW);
+	enableMotor(true);
+	breakMotor(false);
+	digitalWrite(directionPin, LOW);
+	analogWrite(motorPin, 1000);
   // testEncoder();
   // Serial.println(readAngle(false));
 
   //Uncomment to control with electrods
-  int val = readSerial();
-  if (val == - 1){
-    toElectrodControl = !toElectrodControl;
-    Serial.print("Control switched to : ");
-    Serial.println(toElectrodControl ? "Electrod" : "Computer");
-  }
+  // int val = readSerial();
+  // if (val == - 1){
+  //   toElectrodControl = !toElectrodControl;
+  //   Serial.print("Control switched to : ");
+  //   Serial.println(toElectrodControl ? "Electrod" : "Computer");
+  // }
 
-  if (toElectrodControl)
-    goToAngle(electrodControl());
+  // if (toElectrodControl)
+  //   goToAngle(electrodControl());
   
 
 }
