@@ -21,38 +21,17 @@ void setup() {
   Serial.println("Starting");
   SPISetup();
   motorSetup();
-	delay(2000);
+	delay(500);
   Serial.println("Setup done");
-  // turnMotor(1500, CW);
 }
 
 bool toElectrodControl = false;
 
 void loop() {
-  // int goalAngle = readSerial();
-  // goToAngle(goalAngle);
-
-
-  //Serial.println(readAngle(false));
-
-  //readRegisters();
+  // Pour tester les moteurs
 	enableMotor(true);
 	breakMotor(false);
 	digitalWrite(directionPin, LOW);
-	analogWrite(motorPin, 1000);
-  testEncoder();
+	analogWrite(motorPin, 500);
   Serial.println(readAngle(false));
-
-  //Uncomment to control with electrods
-  // int val = readSerial();
-  // if (val == - 1){
-  //   toElectrodControl = !toElectrodControl;
-  //   Serial.print("Control switched to : ");
-  //   Serial.println(toElectrodControl ? "Electrod" : "Computer");
-  // }
-
-  // if (toElectrodControl)
-  //   goToAngle(electrodControl());
-  
-
 }
