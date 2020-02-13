@@ -2,7 +2,7 @@
 #include "Spi_Driver.h"
 #include "Motor.h"
 #include "SerialCom.h"
-
+#include "testMotor.h"
 /*
 Taches à faire :
   -Moduler le code en sous-fichier
@@ -16,22 +16,19 @@ Taches à faire :
   -Asservissement du moteur
 */
 
-void setup() {
+void setup()
+{
   Serial.begin(9600);
   Serial.println("Starting");
   SPISetup();
   motorSetup();
-	delay(500);
+  delay(2000);
   Serial.println("Setup done");
 }
 
 bool toElectrodControl = false;
 
-void loop() {
-  // Pour tester les moteurs
-	enableMotor(true);
-	breakMotor(false);
-	digitalWrite(directionPin, LOW);
-	analogWrite(motorPin, 500);
-  Serial.println(readAngle(false));
+void loop()
+{
+  testAngle(90);
 }

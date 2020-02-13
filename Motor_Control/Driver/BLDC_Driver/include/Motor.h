@@ -20,7 +20,7 @@ void turnMotor(float speed, int dir);
 void stopMotor();
 
 //Encoder
-double readAngle(bool fullTurn);
+double readAngle();
 void resetAngle();
 void setAngle(float angle);
 void testEncoder();
@@ -44,10 +44,10 @@ const int encoderPin1 = 0, encoderPin2 = 1;
 const int comPin = 19; //When controlled by electrods
 
 //Lecture de l'encoder
-const double gearReduction = 100; //100 with gearbox, 1 without
-const double encoderResolution = 4;
-const double countsPerTurn = 4096;
-const double countToAngleFactorTest = 360 / (countsPerTurn*gearReduction*encoderResolution);
+const double gearReduction = 1; //100 with gearbox, 1 without
+const double encoderResolution = 1; //4 pour petit
+const double countsPerTurn = 3200; //petit moteur 4096
+const double countToAngleFactor = 360 / (countsPerTurn * gearReduction * encoderResolution);
 
 //Controle du moteur
 const int pulseMax = 2047;
