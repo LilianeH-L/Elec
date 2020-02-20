@@ -30,5 +30,5 @@ bool toElectrodControl = false;
 
 void loop()
 {
-  testTurnTwoDirections(180, 70);
+  testIncrementSpeed();
 }

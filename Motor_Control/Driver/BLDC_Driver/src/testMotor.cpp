@@ -63,3 +63,23 @@ void testTurnTwoDirections(double angleTest, double speedTest){
         Serial.println(angle);
     }
 }
+void testIncrementSpeed(){
+    for (float i=100; i<1000;i+=10){
+        turnMotor(i,0);
+        delay(100);
+    
+
+
+}
+ for (float i=1000; i>100;i-=10){
+        turnMotor(i,0);
+        delay(100);
+    
+}
+stopMotor();
+delay(2000);
+
+}
+void generalTest(){
+   
+}
