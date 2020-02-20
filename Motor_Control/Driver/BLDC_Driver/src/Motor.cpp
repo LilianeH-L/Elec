@@ -31,12 +31,7 @@ void motorSetup()
 	digitalWrite(18, LOW);
 }
 
-double readAngle()
-{
-	double angle = encoder.read() * countToAngleFactor; //To get degrees
-	return angle;
-}
-
+//Parameters
 void breakMotor(bool toBreak)
 {
 	digitalWrite(brakePin, toBreak);
@@ -47,6 +42,24 @@ void enableMotor(bool toEnable)
 	digitalWrite(enablePin, toEnable);
 }
 
+void setDirection(int dir)
+{
+	digitalWrite(directionPin, dir);
+}
+
+void setSpeed(float speed)
+{
+	analogWrite(motorPin, speed);
+}
+
+void faultDetected()
+{
+	Serial.println("FUCK");
+	while (1)
+		;
+}
+
+//Motor movements
 void turnMotor(float speed, int dir)
 {
 	enableMotor(true);
@@ -61,23 +74,26 @@ void stopMotor()
 	breakMotor(true);
 }
 
-void setSpeed(float speed)
+//Encoder
+double readAngle()
 {
-	analogWrite(motorPin, speed);
+	double angle = encoder.read() * countToAngleFactor; //To get degrees
+	return angle;
 }
 
-void setDirection(int dir)
+void resetAngle()
 {
-	digitalWrite(directionPin, dir);
+	Serial.println("Angle reset to 0");
+	encoder.write(0);
 }
 
-void faultDetected()
+void setAngle(float angle)
 {
-	Serial.println("FUCK");
-	while (1)
-		;
+	double count = angle / 360 * countsPerTurn * gearReduction * encoderResolution;
+	encoder.write(count);
 }
 
+//Controller
 void goToAngle(float angle)
 {
 	bool printAngle = false;
@@ -142,45 +158,6 @@ void turnTimer(float speed, int dir, unsigned long timeToTurn)
 	enableMotor(false);
 }
 
-void resetAngle()
-{
-	Serial.println("Angle reset to 0");
-	encoder.write(0);
-}
-
-void setAngle(float angle)
-{
-	double count = angle / 360 * countsPerTurn * gearReduction * encoderResolution;
-	encoder.write(count);
-}
-
-void testEncoder()
-{
-	Serial.println("Testing Encoder");
-	Serial.print("Starting Angle : ");
-	Serial.println(readAngle());
-
-	turnMotor(500, CW);
-	delay(2000);
-	stopMotor();
-
-	Serial.print("Current Angle :");
-	Serial.println(readAngle());
-
-	delay(1000);
-	Serial.println();
-
-	turnMotor(500, CCW);
-	delay(2000);
-	stopMotor();
-
-	Serial.print("Current Angle :");
-	Serial.println(readAngle());
-
-	delay(1000);
-	Serial.println();
-}
-
 float electrodControl()
 {
 	float goalAngle = -90;
@@ -194,21 +171,4 @@ float electrodControl()
 	}
 	else
 		return 0;
-}
-
-void demo()
-{
-	Serial.println("Starting Demo...");
-	int maxAngle = -70;
-	int delay_time = 1350;
-	goToAngle(maxAngle);
-	delay(delay_time);
-	stopMotor();
-	delay(1500);
-
-	goToAngle(0);
-	delay(delay_time);
-	stopMotor();
-
-	Serial.println("Demo over");
 }

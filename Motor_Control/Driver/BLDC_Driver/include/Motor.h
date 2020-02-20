@@ -8,7 +8,7 @@
 
 void motorSetup();
 
-//Paramètres
+//Parameters
 void breakMotor(bool toBreak);
 void enableMotor(bool toEnable);
 void setDirection(int dir);
@@ -23,13 +23,11 @@ void stopMotor();
 double readAngle();
 void resetAngle();
 void setAngle(float angle);
-void testEncoder();
 
 // Controller
 void goToAngle(float angle);
 void turnTimer(float speed, int dir, unsigned long timeToTurn);
 float electrodControl();
-void demo(); //Demo pour Génial
 
 //Pins
 const int resetPin = 2;
@@ -43,13 +41,13 @@ const int encoderPin1 = 0, encoderPin2 = 1;
 
 const int comPin = 19; //When controlled by electrods
 
-//Lecture de l'encoder
+//Encoder reading
 const double gearReduction = 1; //100 with gearbox, 1 without
-const double encoderResolution = 1; //4 pour petit
-const double countsPerTurn = 3200; //petit moteur 4096
+const double encoderResolution = 1; //4 for the small motor
+const double countsPerTurn = 3200; //small motor 4096
 const double countToAngleFactor = 360 / (countsPerTurn * gearReduction * encoderResolution);
 
-//Controle du moteur
+//Motor controls
 const int pulseMax = 2047;
 const int pulseMin = 100;
 const int turnCW = 1;
