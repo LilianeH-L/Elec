@@ -94,7 +94,7 @@ void setAngle(float angle)
 }
 
 //Controller
-void goToAngle(float angle)
+void goToAngleNoSpeed(float angle)
 {
 	bool printAngle = false;
 
@@ -133,6 +133,22 @@ void goToAngle(float angle)
 	}
 }
 
+void goToAngle(float angleTest, float speedTest, bool dir){
+
+    double angle = readAngle();
+    if (angle < angleTest)
+    {
+        enableMotor(true);
+        breakMotor(false);
+        turnMotor(speedTest, dir);
+    }
+    else
+    {
+        enableMotor(false);
+        breakMotor(true);
+    }
+}
+
 // Only works for the first loop ...
 void turnTimer(float speed, int dir, unsigned long timeToTurn)
 {
@@ -156,19 +172,4 @@ void turnTimer(float speed, int dir, unsigned long timeToTurn)
 
 	breakMotor(true);
 	enableMotor(false);
-}
-
-float electrodControl()
-{
-	float goalAngle = -90;
-	speed = 1000;
-	bool state = digitalRead(comPin);
-	// Serial.print("Com state : ");
-	// Serial.println(state);
-	if (state)
-	{
-		return goalAngle;
-	}
-	else
-		return 0;
 }

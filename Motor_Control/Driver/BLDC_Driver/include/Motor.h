@@ -25,9 +25,9 @@ void resetAngle();
 void setAngle(float angle);
 
 // Controller
-void goToAngle(float angle);
+void goToAngleNoSpeed(float angle);
+void goToAngle(float angleTest, float speedTest, bool dir);
 void turnTimer(float speed, int dir, unsigned long timeToTurn);
-float electrodControl();
 
 //Pins
 const int resetPin = 2;
