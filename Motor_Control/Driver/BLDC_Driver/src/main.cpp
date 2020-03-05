@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <PID_v1.h>
 #include "Spi_Driver.h"
 #include "Motor.h"
 #include "SerialCom.h"
@@ -16,19 +17,53 @@ Taches à faire :
   -Asservissement du moteur
 */
 
+const int maximumSpeed = 2048;
+
+double Setpoint, Input, Output;
+// Tuning parameters
+double Kp=4, Kd=30, Ki=0;
+PID myPID(&Input, &Output, &Setpoint, Kp, Ki, Kd, REVERSE);
+
 void setup()
 {
   Serial.begin(9600);
+  while(!Serial.available());
   Serial.println("Starting");
   SPISetup();
   motorSetup();
-  delay(2000);
+  
+  Setpoint = 0;
+
+  //tell the PID to range between 0 and the full window size
+  myPID.SetOutputLimits(0, maximumSpeed);
+
+  // Turn the PID on
+  myPID.SetMode(AUTOMATIC);
+
+  delay(1000);
   Serial.println("Setup done");
 }
 
-bool toElectrodControl = false;
-
 void loop()
 {
-  testTurnTwoDirections(180, 70);
+  int dir = 0;
+  double actualAngle = readAngle();
+  Serial.print("angle: ");
+  Serial.print(actualAngle);
+
+  double error = 360 - actualAngle;
+  
+  dir = error > 0 ? 0 : 1;
+  
+  Input = error > 0 ? error : -1 * error;
+  
+  Serial.print("\t dir: ");
+  Serial.print(dir);
+  Serial.print("\t input: ");
+  Serial.print(Input);
+  
+  myPID.Compute();
+  turnMotor(Output, dir);
+  Serial.print("\t output: ");
+  Serial.println(Output);
 }
