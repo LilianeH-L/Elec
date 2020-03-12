@@ -66,15 +66,13 @@ void PIDangle()
 void setup()
 {
   Serial.begin(9600);
-  while (!Serial.available())
-    ;
+  while (!Serial.available());
   Serial.println("Starting");
   SPISetup();
   motorSetup();
   
   PIDsetup();
 
-  delay(1000);
   Serial.println("Setup done");
 }
 
