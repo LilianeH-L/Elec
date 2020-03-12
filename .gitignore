@@ -43,3 +43,5 @@ _autosave-*
 .vscode/c_cpp_properties.json
 .vscode/launch.json
 Acquisition/ringBufferDMA/\.vscode/
+
+Motor_Control/Driver/BLDC_Driver/.vscode/*

@@ -81,5 +81,6 @@ delay(2000);
 
 }
 void generalTest(){
+    testIncrementSpeed()
    
 }
