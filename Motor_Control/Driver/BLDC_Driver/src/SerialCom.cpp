@@ -12,9 +12,6 @@ void executeCommande(String commande) {
     if (commande == "spiSetup")
         SPISetup();
 	
-
-	
-	
 	if (commande == "toggleControl");
 		
 }
