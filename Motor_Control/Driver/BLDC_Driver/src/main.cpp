@@ -20,9 +20,48 @@ Taches à faire :
 const int maximumSpeed = 2048;
 
 double Setpoint, Input, Output;
-// Tuning parameters
-double Kp=4, Kd=30, Ki=0;
-PID myPID(&Input, &Output, &Setpoint, Kp, Ki, Kd, REVERSE);
+//tuning parameters
+double Kp=20, Kd=0.5, Ki=0;
+PID myPID(&Input, &Output, &Setpoint, Kp, Ki, Kd, DIRECT);
+
+void PIDsetup()
+{
+  Setpoint = 180;
+
+  //tell the PID to range between -2048 and 2048
+  myPID.SetOutputLimits(-maximumSpeed, maximumSpeed);
+
+  myPID.SetSampleTime(3);
+
+  //turn the PID on
+  myPID.SetMode(AUTOMATIC);
+}
+
+unsigned int prevTime = 0;
+void PIDangle()
+{
+  int dir = 0;
+  double actualAngle = readAngle(); 
+  Input = actualAngle;
+  
+  myPID.Compute();
+  
+  dir = Output > 0 ? 0 : 1;
+  turnMotor(abs(Output), dir);
+
+  unsigned int time = millis();
+  if(time - prevTime > 100) {
+    Serial.print("angle: ");
+    Serial.print(actualAngle);
+    Serial.print("\t dir: ");
+    Serial.print(dir);
+    Serial.print("\t input: ");
+    Serial.print(Input);
+    Serial.print("\t output: ");
+    Serial.println(Output);
+    prevTime = time;
+  }
+}
 
 void setup()
 {
@@ -32,13 +71,7 @@ void setup()
   SPISetup();
   motorSetup();
   
-  Setpoint = 0;
-
-  //tell the PID to range between 0 and the full window size
-  myPID.SetOutputLimits(0, maximumSpeed);
-
-  // Turn the PID on
-  myPID.SetMode(AUTOMATIC);
+  PIDsetup();
 
   delay(1000);
   Serial.println("Setup done");
@@ -46,24 +79,5 @@ void setup()
 
 void loop()
 {
-  int dir = 0;
-  double actualAngle = readAngle();
-  Serial.print("angle: ");
-  Serial.print(actualAngle);
-
-  double error = 360 - actualAngle;
-  
-  dir = error > 0 ? 0 : 1;
-  
-  Input = error > 0 ? error : -1 * error;
-  
-  Serial.print("\t dir: ");
-  Serial.print(dir);
-  Serial.print("\t input: ");
-  Serial.print(Input);
-  
-  myPID.Compute();
-  turnMotor(Output, dir);
-  Serial.print("\t output: ");
-  Serial.println(Output);
+  PIDangle();
 }
