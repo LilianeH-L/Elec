@@ -1,0 +1,143 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "Schéma pic-pickit 3"
+Date "2020-03-09"
+Rev "v00"
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L pic:Pickit_3 U?
+U 1 1 5E679DE2
+P 1650 1750
+F 0 "U?" H 1687 2265 50  0000 C CNN
+F 1 "Pickit_3" H 1687 2174 50  0000 C CNN
+F 2 "" H 1650 1750 50  0001 C CNN
+F 3 "" H 1650 1750 50  0001 C CNN
+	1    1650 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L pic:PIC24F32KA302 U?
+U 1 1 5E67ABEA
+P 6500 2350
+F 0 "U?" H 6525 3515 50  0000 C CNN
+F 1 "PIC24F32KA302" H 6525 3424 50  0000 C CNN
+F 2 "" H 6200 1400 50  0001 C CNN
+F 3 "" H 6200 1400 50  0001 C CNN
+	1    6500 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5E67C59F
+P 3250 1100
+F 0 "R1" H 3300 1150 50  0000 L CNN
+F 1 "1k" H 3300 1050 50  0000 L CNN
+F 2 "" V 3180 1100 50  0001 C CNN
+F 3 "~" H 3250 1100 50  0001 C CNN
+	1    3250 1100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2000 1800 2950 1800
+Wire Wire Line
+	2950 1800 2950 1900
+Wire Wire Line
+	2950 1900 3850 1900
+Wire Wire Line
+	2000 1900 2850 1900
+Wire Wire Line
+	2850 1900 2850 2050
+Wire Wire Line
+	2850 2050 3850 2050
+Wire Wire Line
+	2000 1700 2300 1700
+Wire Wire Line
+	2300 1700 2300 2500
+Wire Wire Line
+	3850 2500 2300 2500
+Connection ~ 2300 2500
+Wire Wire Line
+	2300 2500 2300 2850
+$Comp
+L power:GND #PWR?
+U 1 1 5E67D797
+P 2300 2850
+F 0 "#PWR?" H 2300 2600 50  0001 C CNN
+F 1 "GND" H 2305 2677 50  0000 C CNN
+F 2 "" H 2300 2850 50  0001 C CNN
+F 3 "" H 2300 2850 50  0001 C CNN
+	1    2300 2850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2000 1600 2750 1600
+Wire Wire Line
+	2750 1600 2750 3250
+Wire Wire Line
+	2750 3250 3850 3250
+$Comp
+L power:VDD #PWR?
+U 1 1 5E67E00B
+P 3250 800
+F 0 "#PWR?" H 3250 650 50  0001 C CNN
+F 1 "VDD" H 3267 973 50  0000 C CNN
+F 2 "" H 3250 800 50  0001 C CNN
+F 3 "" H 3250 800 50  0001 C CNN
+	1    3250 800 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2000 1500 2000 1450
+Wire Wire Line
+	2000 1450 3250 1450
+Wire Wire Line
+	3250 1250 3250 1450
+Connection ~ 3250 1450
+Wire Wire Line
+	3250 1450 3850 1450
+Wire Wire Line
+	3250 800  3250 950 
+$Comp
+L Device:C C1
+U 1 1 5E6AB898
+P 9550 1500
+F 0 "C1" H 9665 1546 50  0000 L CNN
+F 1 "0,1 uF" H 9665 1455 50  0000 L CNN
+F 2 "" H 9588 1350 50  0001 C CNN
+F 3 "~" H 9550 1500 50  0001 C CNN
+	1    9550 1500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9200 1450 9350 1450
+Wire Wire Line
+	9350 1450 9350 1350
+Wire Wire Line
+	9350 1350 9550 1350
+Wire Wire Line
+	9200 1600 9400 1600
+Wire Wire Line
+	9400 1600 9400 1650
+Wire Wire Line
+	9400 1650 9550 1650
+$Comp
+L PIC:PIC32F32KA302_carré U?
+U 1 1 5E91735C
+P 4250 5750
+F 0 "U?" H 7044 5696 50  0000 L CNN
+F 1 "PIC32F32KA302_carré" H 7044 5605 50  0000 L CNN
+F 2 "" H 4800 5650 50  0001 C CNN
+F 3 "" H 4800 5650 50  0001 C CNN
+	1    4250 5750
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
