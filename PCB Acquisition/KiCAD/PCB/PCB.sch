@@ -84,4 +84,22 @@ Wire Wire Line
 Wire Wire Line
 	2000 2550 2000 1350
 Connection ~ 2000 1350
+Wire Wire Line
+	12800 1300 12800 3550
+Wire Wire Line
+	12800 3550 12600 3550
+Wire Wire Line
+	9200 1300 12800 1300
+Wire Wire Line
+	12600 3650 13050 3650
+Wire Wire Line
+	13050 3650 13050 1100
+Wire Wire Line
+	13050 1100 9200 1100
+Text Notes 9750 1000 0    50   ~ 0
+Communication I2C\navec un autre uC
+Text Notes 9200 1050 0    50   ~ 0
+SCL\n
+Text Notes 9200 1250 0    50   ~ 0
+SDA
 $EndSCHEMATC
