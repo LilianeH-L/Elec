@@ -194,6 +194,7 @@ void generalTest()
     while (!test2ended)
     {
         test2ended = testAngle(angle);
+        
     }
 
     Serial.println(" press enter to start 3nd test: testing direction");
