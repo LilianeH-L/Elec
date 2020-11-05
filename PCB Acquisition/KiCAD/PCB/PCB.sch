@@ -102,4 +102,30 @@ Text Notes 9200 1050 0    50   ~ 0
 SCL\n
 Text Notes 9200 1250 0    50   ~ 0
 SDA
+Wire Wire Line
+	2000 3150 1350 3150
+Wire Wire Line
+	1350 3150 1350 4900
+Wire Wire Line
+	1350 4900 1650 4900
+Text Notes 1700 4900 0    50   ~ 0
+SIG ou RAW
+Wire Wire Line
+	1650 3250 1150 3250
+Wire Wire Line
+	1150 3250 1150 5150
+Wire Wire Line
+	1150 5150 1650 5150
+Connection ~ 1650 3250
+Wire Wire Line
+	1550 3750 950  3750
+Wire Wire Line
+	950  3750 950  5300
+Wire Wire Line
+	950  5300 1650 5300
+Connection ~ 1550 3750
+Text Notes 1700 5150 0    50   ~ 0
+Vss (GND)\n
+Text Notes 1700 5300 0    50   ~ 0
+Vdd
 $EndSCHEMATC
