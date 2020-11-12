@@ -75,8 +75,9 @@ void setup()
 
   Serial.println("Setup done");
 }
-
+double angleTest=60;
 void loop()
 {
   PIDangle();
+  testIncrementSpeedToAngle(double angleTest)
 }
