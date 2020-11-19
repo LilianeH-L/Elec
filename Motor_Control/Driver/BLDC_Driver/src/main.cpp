@@ -4,6 +4,7 @@
 #include "Motor.h"
 #include "SerialCom.h"
 #include "testMotor.h"
+
 /*
 Taches à faire :
   -Moduler le code en sous-fichier
@@ -79,5 +80,5 @@ double angleTest=60;
 void loop()
 {
   PIDangle();
-  testIncrementSpeedToAngle(double angleTest)
+  testIncrementSpeedToAngle(angleTest);
 }

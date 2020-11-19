@@ -17,7 +17,25 @@ bool testAngle(double angleTest)
         return true;
     }
 }
+double DeltaAngle(double angleTest)
+{
+    double angle = readAngle();
+    double deltaAngle = 0;
 
+    if (angle > angleTest)
+        deltaAngle = angle - angleTest;
+
+        if (deltaAngle > 180)
+        deltaAngle = 360 - deltaAngle;
+
+    else
+        deltaAngle = angle - angleTest;
+
+        if (deltaAngle < -180)
+        deltaAngle = 360 + deltaAngle;
+    
+    return deltaAngle;
+}
 bool testTurnClockWise(double angleTest, double speedTest)
 {
 
@@ -54,6 +72,8 @@ bool testTurnCounterClockWise(double angleTest, double speedTest)
         return true;
     }
 }
+
+//faire fonction test selon delta angle positif 
 void testTurnTwoDirections(double angleTest, double speedTest)
 {
     double angle = readAngle();
@@ -89,6 +109,66 @@ void testIncrementSpeed()
     stopMotor();
     delay(2000);
 }
+void testIncrementSpeedToAngle(double angleTest)
+{
+    double DeltaAngleInitial = DeltaAngle(angleTest); 
+    double pourcentage_acceleration = 20;
+    Serial.println(" incrementing speed counter clockwise ");
+    float vitesse = 100;
+    if (DeltaAngleInitial < 0)
+    {
+        while (DeltaAngle(angleTest) < DeltaAngleInitial*80/100)
+        {   
+            turnMotor(vitesse, 0);
+            vitesse += 10;
+            delay(100);
+        }
+
+        while (DeltaAngle(angleTest) < DeltaAngleInitial*20/100)
+        {
+            turnMotor(vitesse, 0);
+            delay(100);
+        }
+
+        Serial.println(" decrementing speed counter clockwise ");
+        while (DeltaAngle(angleTest) < 0)
+        {
+            turnMotor(vitesse, 0);
+            vitesse -= 10;
+            delay(100);
+        }
+    }
+    
+    
+    if (DeltaAngleInitial > 0)
+    {
+        while (DeltaAngle(angleTest) > DeltaAngleInitial*80/100)
+        {   
+            turnMotor(vitesse, 1);
+            vitesse += 10;
+            delay(100);
+        }
+
+        while (DeltaAngle(angleTest) > DeltaAngleInitial*20/100)
+        {
+            turnMotor(vitesse, 1);
+            delay(100);
+        }
+
+        Serial.println(" decrementing speed counter clockwise ");
+        while (DeltaAngle(angleTest) > 0)
+        {
+            turnMotor(vitesse, 1);
+            vitesse -= 10;
+            delay(100);
+        }
+    }
+
+    stopMotor();
+    delay(2000);
+}
+
+
 
 void serialFlush(){
   while(Serial.available() > 0) {

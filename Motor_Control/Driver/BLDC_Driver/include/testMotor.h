@@ -4,3 +4,4 @@ void testTurnClockWise(double angleTest, double speedTest);
 void testTurnTwoDirections(double angleTest, double speedTest);
 void testIncrementSpeed();
 void generalTest();
+void testIncrementSpeedToAngle(double angleTest);
