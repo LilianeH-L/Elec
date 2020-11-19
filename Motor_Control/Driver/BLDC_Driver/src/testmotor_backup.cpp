@@ -21,17 +21,21 @@ bool testAngle(double angleTest)
 double DeltaAngle(double angleTest)
 {
     double angle = readAngle();
-    if (angle > angleTest)
-        DeltaAngle = angle - angleTest;
+    double deltaAngle = 0;
 
-        if (DeltaAngle > 180)
-        DeltaAngle = 360 - DeltaAngle;
+    if (angle > angleTest)
+        deltaAngle = angle - angleTest;
+
+        if (deltaAngle > 180)
+        deltaAngle = 360 - deltaAngle;
 
     else
-        DeltaAngle = angle - angleTest;
+        deltaAngle = angle - angleTest;
 
-        if (DeltaAngle < -180)
-        DeltaAngle = 360 + DeltaAngle;
+        if (deltaAngle < -180)
+        deltaAngle = 360 + deltaAngle;
+    
+    return deltaAngle;
 }
 
 bool testTurnClockWise(double angleTest, double speedTest)  
