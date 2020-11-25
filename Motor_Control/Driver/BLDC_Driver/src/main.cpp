@@ -4,6 +4,7 @@
 #include "Motor.h"
 #include "SerialCom.h"
 #include "testMotor.h"
+#include "PID.h"
 
 /*
 Taches à faire :
@@ -18,56 +19,11 @@ Taches à faire :
   -Asservissement du moteur
 */
 
-const int maximumSpeed = 2048;
-
-double Setpoint, Input, Output;
-//tuning parameters
-double Kp=20, Kd=0.5, Ki=0;
-PID myPID(&Input, &Output, &Setpoint, Kp, Ki, Kd, DIRECT);
-
-void PIDsetup()
-{
-  Setpoint = 180;
-
-  //tell the PID to range between -2048 and 2048
-  myPID.SetOutputLimits(-maximumSpeed, maximumSpeed);
-
-  myPID.SetSampleTime(3);
-
-  //turn the PID on
-  myPID.SetMode(AUTOMATIC);
-}
-
-unsigned int prevTime = 0;
-void PIDangle()
-{
-  int dir = 0;
-  double actualAngle = readAngle(); 
-  Input = actualAngle;
-  
-  myPID.Compute();
-  
-  dir = Output > 0 ? 0 : 1;
-  turnMotor(abs(Output), dir);
-
-  unsigned int time = millis();
-  if(time - prevTime > 100) {
-    Serial.print("angle: ");
-    Serial.print(actualAngle);
-    Serial.print("\t dir: ");
-    Serial.print(dir);
-    Serial.print("\t input: ");
-    Serial.print(Input);
-    Serial.print("\t output: ");
-    Serial.println(Output);
-    prevTime = time;
-  }
-}
 
 void setup()
 {
   Serial.begin(9600);
-  while (!Serial.available());
+  //while (!Serial.available());
   Serial.println("Starting");
   SPISetup();
   motorSetup();
@@ -76,9 +32,17 @@ void setup()
 
   Serial.println("Setup done");
 }
-double angleTest=60;
+double initialAngle=readAngle();
+double angleTest=140;
+double speedTest=300;
 void loop()
 {
+  //Serial.print(initialAngle);
   PIDangle();
-  testIncrementSpeedToAngle(angleTest);
+  // testIncrementSpeedToAngle(angleTest);
+  // testTurnCounterClockWise( angleTest, speedTest);
+  //testIncrementSpeedToAngle(angleTest);
+ 
+ //Serial.print(readAngle());
+
 }

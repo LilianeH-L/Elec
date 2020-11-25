@@ -57,6 +57,7 @@ bool testTurnClockWise(double angleTest, double speedTest)
 bool testTurnCounterClockWise(double angleTest, double speedTest)
 {
     double angle = readAngle();
+    Serial.println(angle);
     if (angle < angleTest)
     {
         enableMotor(true);

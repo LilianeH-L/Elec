@@ -5,3 +5,4 @@ void testTurnTwoDirections(double angleTest, double speedTest);
 void testIncrementSpeed();
 void generalTest();
 void testIncrementSpeedToAngle(double angleTest);
+double DeltaAngle(double angleTest);
