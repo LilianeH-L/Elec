@@ -1,4 +1,4 @@
-16942656206153730
+16939507785951150
 24FV32KA302A
 PIC24F32KA302-I&slash_SS
 
@@ -53168,20 +53168,6 @@ Oscillator
 Oscillator_SeikoEpson_SG-8002DC
 8-lead dip package, row spacing 7.62 mm (300 mils)
 DIL DIP PDIP 2.54mm 7.62mm 300mil
-0
-4
-4
-PIC_footprint
-PIC24F32KA302-I&slash_SS
-
-
-0
-28
-28
-PIC_footprint
-PIC_footprint
-
-
 0
 4
 4
