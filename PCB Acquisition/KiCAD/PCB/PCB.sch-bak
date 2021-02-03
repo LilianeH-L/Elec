@@ -77,7 +77,7 @@ U 1 1 600A24D0
 P 900 1400
 F 0 "J1" H 792 1785 50  0000 C CNN
 F 1 "Conn_01x06_Female" H 792 1694 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 900 1400 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x06_P2.54mm_Vertical" H 900 1400 50  0001 C CNN
 F 3 "~" H 900 1400 50  0001 C CNN
 	1    900  1400
 	-1   0    0    -1  

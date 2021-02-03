@@ -1,3 +1,3 @@
 (fp_lib_table
-  (lib (name 24FV32KA302A)(type KiCad)(uri "D:/Documents/Scolaire/Polytechnique/Métis/Elec/PCB Acquisition/KiCAD/PCB/Libraries/PIC_footprint.pretty")(options "")(descr ""))
+  (lib (name PIC24F32KA302)(type KiCad)(uri ${KIPRJMOD}/Libraries/ul_PIC24F32KA302ISP/KiCAD/2021-02-03_15-11-19/footprints.pretty)(options "")(descr ""))
 )
