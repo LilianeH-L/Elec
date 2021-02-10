@@ -62,11 +62,11 @@ Wire Wire Line
 Wire Wire Line
 	1350 3150 1350 5100
 $Comp
-L Connector:Conn_01x06_Female J1
+L Connector:Conn_01x05_Female J1
 U 1 1 600A24D0
 P 900 1400
 F 0 "J1" H 792 1785 50  0000 C CNN
-F 1 "Conn_01x06_Female" H 792 1694 50  0000 C CNN
+F 1 "Conn_01x05_Female" H 792 1694 50  0000 C CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x06_P2.54mm_Vertical" H 900 1400 50  0001 C CNN
 F 3 "~" H 900 1400 50  0001 C CNN
 	1    900  1400
@@ -102,46 +102,8 @@ Wire Wire Line
 Connection ~ 1550 1300
 Wire Wire Line
 	1550 1300 1650 1300
-Text Notes 8400 5000 0    50   ~ 0
-SCL\n
-Text Notes 8400 5100 0    50   ~ 0
-SDA
-$Comp
-L Connector:Conn_01x02_Male J3
-U 1 1 600B67EA
-P 8600 5000
-F 0 "J3" H 8700 5250 50  0000 C CNN
-F 1 "Conn_01x02_Male" H 8700 5150 50  0000 C CNN
-F 2 "Connector_Molex:Molex_KK-396_A-41791-0002_1x02_P3.96mm_Vertical" H 8600 5000 50  0001 C CNN
-F 3 "~" H 8600 5000 50  0001 C CNN
-	1    8600 5000
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8800 5000 9700 5000
-Wire Wire Line
-	9700 5000 9700 3650
-Wire Wire Line
-	9700 3650 9500 3650
-Wire Wire Line
-	9500 3550 9800 3550
-Wire Wire Line
-	9800 3550 9800 5100
-Wire Wire Line
-	9800 5100 8800 5100
 Text Notes 800  1550 1    50   ~ 0
 Pickit 3
-$Comp
-L 2021-02-03_15-11-19:PIC24F32KA302-I_SP U1
-U 1 1 601AC5B6
-P 2150 2550
-F 0 "U1" H 5825 2937 60  0000 C CNN
-F 1 "PIC24F32KA302-I_SP" H 5825 2831 60  0000 C CNN
-F 2 "PIC24F32KA302:PIC24F32KA302-I&slash_SP" H 7450 2790 60  0001 C CNN
-F 3 "" H 2150 2550 60  0000 C CNN
-	1    2150 2550
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	1550 3750 2150 3750
 Wire Wire Line
@@ -154,4 +116,43 @@ Wire Wire Line
 	1500 2850 2150 2850
 Wire Wire Line
 	2000 2550 2150 2550
+$Comp
+L dk_Sockets-for-ICs-Transistors:ED281DT J3
+U 1 1 6023F95E
+P 2450 3050
+F 0 "J3" H 2400 3775 50  0000 C CNN
+F 1 "ED281DT" H 2400 3684 50  0000 C CNN
+F 2 "digikey-footprints:Socket_DIP-28_7.62mm_Conn" H 2650 3250 60  0001 L CNN
+F 3 "https://media.digikey.com/pdf/Data%20Sheets/On%20Shore%20PDFs/EDXXXDT_Dwg.pdf" H 2650 3350 60  0001 L CNN
+F 4 "ED3050-5-ND" H 2650 3450 60  0001 L CNN "Digi-Key_PN"
+F 5 "ED281DT" H 2650 3550 60  0001 L CNN "MPN"
+F 6 "Connectors, Interconnects" H 2650 3650 60  0001 L CNN "Category"
+F 7 "Sockets for ICs, Transistors" H 2650 3750 60  0001 L CNN "Family"
+F 8 "https://media.digikey.com/pdf/Data%20Sheets/On%20Shore%20PDFs/EDXXXDT_Dwg.pdf" H 2650 3850 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/on-shore-technology-inc/ED281DT/ED3050-5-ND/4147600" H 2650 3950 60  0001 L CNN "DK_Detail_Page"
+F 10 "CONN IC DIP SOCKET 28POS TIN" H 2650 4050 60  0001 L CNN "Description"
+F 11 "On Shore Technology Inc." H 2650 4150 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 2650 4250 60  0001 L CNN "Status"
+	1    2450 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2650 3650 3650 3650
+Text Notes 4000 3600 2    50   ~ 0
+SDA
+Text Notes 4000 3700 2    50   ~ 0
+SCL\n
+$Comp
+L Connector:Conn_01x02_Male J4
+U 1 1 600B67EA
+P 3850 3550
+F 0 "J4" H 3950 3800 50  0000 C CNN
+F 1 "Conn_01x02_Male" H 3950 3700 50  0000 C CNN
+F 2 "Connector_Molex:Molex_KK-396_A-41791-0002_1x02_P3.96mm_Vertical" H 3850 3550 50  0001 C CNN
+F 3 "~" H 3850 3550 50  0001 C CNN
+	1    3850 3550
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	2650 3550 3650 3550
 $EndSCHEMATC

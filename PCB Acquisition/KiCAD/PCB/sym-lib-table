@@ -1,4 +1,5 @@
 (sym_lib_table
   (lib (name PCB-rescue)(type Legacy)(uri ${KIPRJMOD}/PCB-rescue.lib)(options "")(descr ""))
   (lib (name 2021-02-03_15-11-19)(type Legacy)(uri ${KIPRJMOD}/Libraries/ul_PIC24F32KA302ISP/KiCAD/2021-02-03_15-11-19/2021-02-03_15-11-19.lib)(options "")(descr ""))
+  (lib (name dk_Sockets-for-ICs-Transistors)(type Legacy)(uri ${KIPRJMOD}/Libraries/digikey-kicad-library-master/digikey-symbols/dk_Sockets-for-ICs-Transistors.lib)(options "")(descr ""))
 )
