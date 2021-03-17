@@ -34,7 +34,7 @@ void setup()
 }
 double initialAngle=readAngle();
 double angleTest=140;
-double speedTest=300;
+double speedTest=150;
 void loop()
 {
   //Serial.print(initialAngle);

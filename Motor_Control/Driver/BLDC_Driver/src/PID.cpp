@@ -9,7 +9,7 @@ const int maximumSpeed = 2048;
 
 double Setpoint, Input, Output;
 //tuning parameters
-double Kp=20, Kd=0.5, Ki=0;
+double Kp=2, Kd=0.2, Ki=0.5;
 PID myPID(&Input, &Output, &Setpoint, Kp, Ki, Kd, DIRECT);
 
 void PIDsetup()
@@ -30,14 +30,17 @@ void PIDangle()
 {
   int dir = 0;
   double actualAngle = readAngle(); 
-  //Input = actualAngle;
-  Input=DeltaAngle(90);
-  
+  Input = actualAngle;
+  //Input=DeltaAngle(0);
+
   myPID.Compute();
   
-  dir = Output > 0 ? 0 : 1;
-  turnMotor(abs(Output), dir);
 
+  dir = Output > 0 ? 0 : 1;
+
+
+  turnMotor(abs(Output), dir);
+  
   unsigned int time = millis();
   if(time - prevTime > 100) {
     Serial.print("angle: ");
@@ -50,4 +53,5 @@ void PIDangle()
     Serial.println(Output);
     prevTime = time;
   }
+ 
 }
