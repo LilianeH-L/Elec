@@ -27,14 +27,15 @@ void setup()
   Serial.println("Starting");
   SPISetup();
   motorSetup();
-  
-  PIDsetup();
+  double Angle_cible=20;
+  PIDsetup(Angle_cible);
 
   Serial.println("Setup done");
 }
+
 double initialAngle=readAngle();
-double angleTest=140;
-double speedTest=150;
+double angleTest=90;
+double speedTest=20;
 void loop()
 {
   //Serial.print(initialAngle);

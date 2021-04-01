@@ -9,12 +9,12 @@ const int maximumSpeed = 2048;
 
 double Setpoint, Input, Output;
 //tuning parameters
-double Kp=2, Kd=0.2, Ki=0.5;
+double Kp=2, Kd=0.2, Ki=1;
 PID myPID(&Input, &Output, &Setpoint, Kp, Ki, Kd, DIRECT);
 
-void PIDsetup()
+void PIDsetup(double Angle_cible)
 {
-  Setpoint = 180;
+  Setpoint = Angle_cible;
 
   //tell the PID to range between -2048 and 2048
   myPID.SetOutputLimits(-maximumSpeed, maximumSpeed);
@@ -31,7 +31,7 @@ void PIDangle()
   int dir = 0;
   double actualAngle = readAngle(); 
   Input = actualAngle;
-  //Input=DeltaAngle(0);
+ 
 
   myPID.Compute();
   

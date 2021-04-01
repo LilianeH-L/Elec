@@ -113,7 +113,7 @@ void testIncrementSpeed()
 void testIncrementSpeedToAngle(double angleTest)
 {
     double DeltaAngleInitial = DeltaAngle(angleTest); 
-    double pourcentage_acceleration = 20;
+    //double pourcentage_acceleration = 20;
     Serial.println(" incrementing speed counter clockwise ");
     float vitesse = 100;
     if (DeltaAngleInitial < 0)
