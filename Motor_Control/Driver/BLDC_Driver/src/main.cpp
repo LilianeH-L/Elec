@@ -36,10 +36,16 @@ void setup()
 double initialAngle=readAngle();
 double angleTest=90;
 double speedTest=20;
+
 void loop()
 {
   //Serial.print(initialAngle);
+
+  // aquisition par communication I2C (angle cible)
+  // actualisation de l'anle cible (pid_setup)
+
   PIDangle();
+
   // testIncrementSpeedToAngle(angleTest);
   // testTurnCounterClockWise( angleTest, speedTest);
   //testIncrementSpeedToAngle(angleTest);
