@@ -19,7 +19,6 @@ Taches à faire :
   -Asservissement du moteur
 */
 
-
 void setup()
 {
   Serial.begin(9600);
@@ -27,8 +26,8 @@ void setup()
   Serial.println("Starting");
   SPISetup();
   motorSetup();
-  double Angle_cible=20;
-  PIDsetup(Angle_cible);
+  double Angle_initial=180; 
+  PIDsetup(Angle_initial);
 
   Serial.println("Setup done");
 }
